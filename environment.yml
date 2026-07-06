@@ -1,0 +1,53 @@
+name: masterarbeit-env
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  # Stabile Python-Version (verhindert Kompilierungsfehler bei neuen Modulen)
+  - python=3.11
+  - pip
+  
+  # --- Core Data Science & Datenverarbeitung ---
+  - numpy>=1.26.0
+  - pandas>=2.2.0
+  - polars>=1.0.0
+  - scipy>=1.13.0
+  - statsmodels>=0.14.0
+  - networkx>=3.2.0
+  
+  # --- Machine Learning & AI ---
+  - scikit-learn>=1.4.0
+  - xgboost>=2.0.0
+  - lightgbm>=4.3.0
+  - catboost>=1.2.0
+  - shap>=0.45.0
+  - pytorch>=2.2.0
+  - transformers>=4.40.0
+  - sentence-transformers>=3.0.0
+  - spacy>=3.7.0
+  - huggingface_hub
+  
+  # --- Visualization ---
+  - matplotlib>=3.8.0
+  - seaborn>=0.13.0
+  - plotly>=5.20.0
+  - graphviz
+  
+  # --- Jupyter & Development ---
+  - jupyterlab>=4.1.0
+  - ipykernel
+  - ipywidgets
+  
+  # --- Web & APIs ---
+  - requests
+  - beautifulsoup4
+  - lxml
+  - google-api-python-client
+  
+  # Pakete, die evtl. nicht oder nur in bestimmten Versionen auf Conda verfügbar sind,
+  # werden sicherheitshalber über pip installiert:
+  - pip:
+    - edgartools>=4.6.0  # Spezifisch für SEC Edgar Data
+    - python-json-logger
+    - prompt_toolkit
+    - https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.8.0/en_core_web_sm-3.8.0-py3-none-any.whl # Spacy Sprachmodell direkt mitinstallieren
