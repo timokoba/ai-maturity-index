@@ -45,7 +45,7 @@ def compose_index(write: bool = True) -> pd.DataFrame:
     """Join all per-indicator parquets onto the Fortune 500 base table.
 
     Each indicator's feature columns are namespaced with its indicator
-    name (e.g. `strategy_governance__net_tone_finbert`) to avoid
+    name (e.g. `strategy__net_tone`, `governance__fls_share`) to avoid
     collisions across indicators. The result is keyed on
     `normalized_company_name`.
     """

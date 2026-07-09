@@ -47,7 +47,7 @@ dependencies:
   # Pakete, die evtl. nicht oder nur in bestimmten Versionen auf Conda verfügbar sind,
   # werden sicherheitshalber über pip installiert:
   - pip:
-    - edgartools>=4.6.0  # Spezifisch für SEC Edgar Data
+    - edgartools==5.30.2  # Spezifisch für SEC Edgar Data. Gepinnt: das 10-K-Section-Parsing (part_ii_item_7 etc.) haengt vom edgartools-Release ab; 5.x hat das Legacy-Verhalten von 4.x geaendert. Feste Version = reproduzierbares Parsing.
     - python-json-logger
     - prompt_toolkit
     - https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.8.0/en_core_web_sm-3.8.0-py3-none-any.whl # Spacy Sprachmodell direkt mitinstallieren
