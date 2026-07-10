@@ -23,12 +23,12 @@ from pathlib import Path
 
 import pandas as pd
 
-from ..common.io import DATA_RAW
+from ..common.io import DATA_CACHE
 
 log = logging.getLogger(__name__)
 
 MODEL_NAME = "yiyanghkust/finbert-fls"
-CACHE_DIR = DATA_RAW / "edgar" / "_fls_cache"
+CACHE_DIR = DATA_CACHE / "edgar" / "_fls_cache"
 _CLASSES = ("specific", "nonspecific", "not")
 COLUMNS = ["sentence", "p_specific", "p_nonspecific", "p_not", "label", "confidence"]
 
@@ -44,10 +44,12 @@ def _cache_path(sentence_hash: str) -> Path:
 @lru_cache(maxsize=1)
 def _load_pipeline():
     import torch
-    from transformers import AutoModelForSequenceClassification, AutoTokenizer, pipeline
+    from transformers import BertForSequenceClassification, BertTokenizer, pipeline
 
-    tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME)
-    model = AutoModelForSequenceClassification.from_pretrained(MODEL_NAME)
+    # See sentiment.py: FinBERT's 2020-era config needs the explicit BERT classes
+    # under current transformers (Auto* requires model_type / fast-tokenizer files).
+    tokenizer = BertTokenizer.from_pretrained(MODEL_NAME)
+    model = BertForSequenceClassification.from_pretrained(MODEL_NAME)
     device = 0 if torch.cuda.is_available() else -1
     return pipeline(
         "text-classification", model=model, tokenizer=tokenizer,

@@ -1,10 +1,11 @@
 """Compose per-indicator parquets into the AI Maturity Index feature matrix.
 
 This module is intentionally indicator-agnostic: it discovers every
-parquet in `data_clean/indicators/` and joins their feature columns
-onto the master Fortune 500 row set. New indicators dropped into that
-folder are picked up automatically as long as they expose a
-`normalized_company_name` join key.
+parquet in `data_clean/indicators/<universe>/` and joins their feature
+columns onto that universe's base row set. New indicators dropped into
+that folder are picked up automatically as long as they expose a
+`normalized_company_name` join key. Which universe feeds the index is a
+single argument.
 """
 
 from __future__ import annotations
@@ -13,10 +14,10 @@ import logging
 
 import pandas as pd
 
-from ..indicators.common.company_ids import load_fortune500
+from ..indicators.common.universe import load_universe
 from ..indicators.common.io import (
-    INDEX_OUTPUT,
     INDICATORS_DIR,
+    index_output_path,
     list_indicators,
     read_indicator,
 )
@@ -24,6 +25,7 @@ from ..indicators.common.io import (
 log = logging.getLogger(__name__)
 
 JOIN_KEY = "normalized_company_name"
+BASE_COLS = ["rank", "company", "ticker", "industry", "normalized_company_name"]
 NON_FEATURE_COLS = {
     "cik",
     "ticker",
@@ -41,25 +43,27 @@ def _prefix_features(df: pd.DataFrame, indicator: str) -> pd.DataFrame:
     return df[keep].rename(columns=rename_map)
 
 
-def compose_index(write: bool = True) -> pd.DataFrame:
-    """Join all per-indicator parquets onto the Fortune 500 base table.
+def compose_index(universe: str, write: bool = True) -> pd.DataFrame:
+    """Join all per-indicator parquets of one universe onto its base table.
 
     Each indicator's feature columns are namespaced with its indicator
-    name (e.g. `strategy__net_tone`, `governance__fls_share`) to avoid
-    collisions across indicators. The result is keyed on
-    `normalized_company_name`.
+    name (e.g. `strategy__net_tone`, `technology__ai_patent_share`) to
+    avoid collisions across indicators. The result is keyed on
+    `normalized_company_name` and written to
+    `data_clean/ai_maturity_index_<universe>.parquet`.
     """
-    base = load_fortune500()[["rank", "company", "ticker", "industry", "normalized_company_name"]]
+    universe_df = load_universe(universe)
+    base = universe_df[[c for c in BASE_COLS if c in universe_df.columns]]
 
-    indicators = list_indicators()
+    indicators = list_indicators(universe)
     if not indicators:
-        log.warning("No indicator parquets found in %s", INDICATORS_DIR)
+        log.warning("No indicator parquets found in %s", INDICATORS_DIR / universe)
     else:
-        log.info("Composing %d indicators: %s", len(indicators), ", ".join(indicators))
+        log.info("Composing %d indicators for %s: %s", len(indicators), universe, ", ".join(indicators))
 
     out = base
     for ind in indicators:
-        df = read_indicator(ind)
+        df = read_indicator(ind, universe)
         if JOIN_KEY not in df.columns:
             log.warning("Indicator %s lacks %s column; skipping", ind, JOIN_KEY)
             continue
@@ -67,7 +71,8 @@ def compose_index(write: bool = True) -> pd.DataFrame:
         out = out.merge(prefixed, on=JOIN_KEY, how="left")
 
     if write:
-        INDEX_OUTPUT.parent.mkdir(parents=True, exist_ok=True)
-        out.to_parquet(INDEX_OUTPUT, index=False)
-        log.info("Wrote %d rows x %d cols to %s", len(out), out.shape[1], INDEX_OUTPUT)
+        out_path = index_output_path(universe)
+        out_path.parent.mkdir(parents=True, exist_ok=True)
+        out.to_parquet(out_path, index=False)
+        log.info("Wrote %d rows x %d cols to %s", len(out), out.shape[1], out_path)
     return out

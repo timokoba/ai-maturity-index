@@ -7,11 +7,9 @@ Babina, Fedyk, He, Hodson (2024, JFE):
 - `ai_sentence_share` (extensive margin) -- share of the Item's cleaned
   sentences that mention AI. Length-normalized to neutralize cross-firm
   differences in 10-K size (Loughran-McDonald 2011 convention).
-- an intensive-margin tone, conditional on at least
-  `MIN_AI_SENTENCES_FOR_TONE` AI sentences in the Item (below that the mean is
-  too noisy to compare across firms and is set to NaN). Every tone is a mean of
-  FinBERT softmax probabilities over the Item's AI sentences, so all three
-  dimensions are on a comparable, continuous footing:
+- an intensive-margin tone, the mean of FinBERT softmax probabilities over
+  the Item's AI sentences, so all three dimensions are on a comparable,
+  continuous footing:
     - sentiment dimensions (strategy, operations) report `net_tone`, the mean
       of (P(positive) - P(negative)) in [-1, 1] (FinBERT-tone; Huang, Wang,
       Yang 2023, CAR).
@@ -19,14 +17,22 @@ Babina, Fedyk, He, Hodson (2024, JFE):
       P(forward-looking) in [0, 1] (FinBERT-FLS) -- how prospectively, rather
       than merely descriptively, the firm frames its AI risk.
 
-Each dimension thus contributes exactly two indicators: the extensive
-`ai_sentence_share` and one intensive tone score.
+Missing data is marked, never conflated with zero:
 
-Each dimension draws on a single Item, so `MIN_AI_SENTENCES_FOR_TONE` bites
-harder than a pooled indicator would (especially governance, where Item 1A
-carries fewer AI mentions); the notebooks' sanity cell reports the pass-rate at
-3/5/10/20 so it can be revisited. Output is written to
-`data_clean/indicators/<dimension>.parquet`.
+- an Item that did not parse (fewer than `MIN_ITEM_SENTENCES_FOR_PARSE`
+  clean sentences) has no defined share -- `ai_sentence_share` and
+  `has_ai_mention` are NaN, and `item_parsed` is 0. A parsed Item with no
+  AI sentences is a genuine 0.
+- a tone over zero AI sentences is undefined -- NaN, never 0. Beyond that
+  there is no minimum-sentence threshold: a firm with little AI text is
+  already reflected in `ai_sentence_share`, and gating the tone on top would
+  penalise it twice while leaving nothing sensible to impute. The per-firm
+  `n_ai_sentences` ships with every row so noisy small-sample tones can be
+  weighted or filtered downstream if needed.
+
+Each dimension thus contributes exactly two indicators: the extensive
+`ai_sentence_share` and one intensive tone score. Output is written to
+`data_clean/indicators/<universe>/<dimension>.parquet`.
 """
 
 from __future__ import annotations
@@ -36,20 +42,19 @@ import pandas as pd
 from ..common.io import write_indicator
 from .dimensions import Dimension
 
-MIN_AI_SENTENCES_FOR_TONE = 5
-
 # A filing is "parse-complete" only if all three Items yielded at least
 # MIN_ITEM_SENTENCES_FOR_PARSE clean sentences. Genuine sections run to hundreds
 # of sentences (median ~250), so this floor discards edgartools truncation stubs
 # (a handful of sentences) without touching a real section. The flag is written
-# identically into every dimension's output so the same firms drop everywhere.
+# identically into every dimension's output; the per-dimension `item_parsed`
+# flag marks whether this dimension's own Item cleared the floor.
 ALL_ITEMS = ("item_1", "item_1a", "item_7")
 MIN_ITEM_SENTENCES_FOR_PARSE = 25
 
 
 def _net_tone(df: pd.DataFrame) -> float:
     if len(df) == 0:
-        return 0.0
+        return float("nan")
     return float((df["pos"].sum() - df["neg"].sum()) / len(df))
 
 
@@ -58,7 +63,7 @@ def aggregate_dimension(
     filings: pd.DataFrame,
     scored_sentences: pd.DataFrame,
     sentence_totals: pd.DataFrame,
-    min_ai_sentences_for_tone: int = MIN_AI_SENTENCES_FOR_TONE,
+    universe: str,
 ) -> pd.DataFrame:
     """Aggregate one dimension's per-sentence scores to one row per firm.
 
@@ -68,12 +73,13 @@ def aggregate_dimension(
     `label`) or `forward_looking.score_forward_looking` (`p_specific`,
     `p_nonspecific`). `sentence_totals` supplies each Item's total cleaned
     sentence count (`filter.filter_ai_sentences`), the denominator of
-    `ai_sentence_share`. Firms with fewer than `min_ai_sentences_for_tone` AI
-    sentences get NaN tone (unreliable mean; handle at index-composition time).
+    `ai_sentence_share`.
 
-    Returns one row per firm -- extensive margin, intensive-margin tone, and a
-    `parse_complete` flag identical across dimensions so the same incomplete
-    firms drop everywhere -- and writes `data_clean/indicators/<name>.parquet`.
+    Returns one row per firm and writes
+    `data_clean/indicators/<universe>/<name>.parquet`. Firms whose Item did
+    not parse keep their row with NaN share/tone and `item_parsed = 0`;
+    nothing is dropped here -- missing values are handled at
+    index-composition time.
     """
     item = dimension.item
     totals_col = f"n_sentences_{item}"
@@ -108,6 +114,8 @@ def aggregate_dimension(
             n_total = 0
             parse_complete = False
 
+        item_parsed = n_total >= MIN_ITEM_SENTENCES_FOR_PARSE
+
         row = dict(
             cik=f["cik"],
             ticker=f["ticker"],
@@ -116,13 +124,14 @@ def aggregate_dimension(
             accession_number=f["accession_number"],
             fiscal_year=f["fiscal_year"],
             parse_complete=int(parse_complete),
-            has_ai_mention=int(n_ai > 0),
+            item_parsed=int(item_parsed),
             n_ai_sentences=int(n_ai),
             n_total_sentences=int(n_total),
-            ai_sentence_share=float(n_ai / n_total) if n_total > 0 else 0.0,
+            has_ai_mention=float(n_ai > 0) if item_parsed else float("nan"),
+            ai_sentence_share=float(n_ai / n_total) if item_parsed else float("nan"),
         )
 
-        has_tone = n_ai >= min_ai_sentences_for_tone
+        has_tone = item_parsed and n_ai > 0
         if dimension.tone == "sentiment":
             row["net_tone"] = _net_tone(sub) if has_tone else float("nan")
         elif dimension.tone == "forward_looking":
@@ -135,5 +144,5 @@ def aggregate_dimension(
         rows.append(row)
 
     out = pd.DataFrame(rows)
-    write_indicator(out, dimension.name)
+    write_indicator(out, dimension.name, universe)
     return out

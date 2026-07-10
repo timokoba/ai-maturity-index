@@ -18,12 +18,12 @@ from pathlib import Path
 
 import pandas as pd
 
-from ..common.io import DATA_RAW
+from ..common.io import DATA_CACHE
 
 log = logging.getLogger(__name__)
 
 MODEL_NAME = "yiyanghkust/finbert-tone"
-CACHE_DIR = DATA_RAW / "edgar" / "_sentiment_cache"
+CACHE_DIR = DATA_CACHE / "edgar" / "_sentiment_cache"
 
 
 def _hash(sentence: str) -> str:
@@ -37,10 +37,14 @@ def _cache_path(sentence_hash: str) -> Path:
 @lru_cache(maxsize=1)
 def _load_pipeline():
     import torch
-    from transformers import AutoModelForSequenceClassification, AutoTokenizer, pipeline
+    from transformers import BertForSequenceClassification, BertTokenizer, pipeline
 
-    tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME)
-    model = AutoModelForSequenceClassification.from_pretrained(MODEL_NAME)
+    # FinBERT is fine-tuned bert-base with a custom 30,873-token vocab. Its 2020-era
+    # config lacks the `model_type`/fast-tokenizer files that transformers' Auto*
+    # classes now require, so we load the BERT classes explicitly (same weights and
+    # WordPiece tokenization, no conversion needed).
+    tokenizer = BertTokenizer.from_pretrained(MODEL_NAME)
+    model = BertForSequenceClassification.from_pretrained(MODEL_NAME)
     device = 0 if torch.cuda.is_available() else -1
     return pipeline(
         "text-classification",
