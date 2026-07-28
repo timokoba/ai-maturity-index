@@ -103,6 +103,35 @@ _MIN_BODY_GAP = 200  # a boundary sitting right on the header is a table-of-cont
 MIN_SECTION_LEN = 500
 MAX_SECTION_LEN = 1_000_000
 
+# An edgartools section this short is a truncation stub, not the real Item: in
+# the S&P 500 FY2025 cross-section every section clearing the 25-sentence parse
+# floor is >= 6,649 chars while every below-floor stub is <= 6,087, so the two
+# populations do not overlap. A stub may be replaced by a regex candidate that
+# passes every validation, does not overlap a sibling, and is at least three
+# times the stub's length (a real section decisively outruns its stub). The
+# same floor applies to regex fills: a candidate below it would itself be a
+# stub, so it is left missing and marked rather than stored.
+STUB_SECTION_LEN = 6_500
+
+# Additional gates for regex candidates, each calibrated on the S&P 500 FY2025
+# cross-section so that every verified-genuine recovery passes and every junk
+# candidate fails:
+# - narrative density (". " per 1,000 chars): genuine sections score 2.3-5.2;
+#   tables of contents and property/financial tables score 0.0-1.0.
+# - sibling containment at selection time: genuine recoveries overlap their
+#   siblings by <= 0.28; captures that ran into a sibling score >= 0.4.
+# - fragment ratio: when a longer candidate was rejected only because it
+#   overlaps a sibling, a much shorter fallback (< 20% of it) is a stray
+#   header fragment, not the section the header family belongs to.
+_MIN_NARRATIVE_DENSITY = 1.5
+_MAX_SIBLING_CONTAINMENT = 0.3
+_MIN_FRAGMENT_RATIO = 0.2
+_MAX_REGEX_LEN = 450_000
+
+
+def _narrative_density(text: str) -> float:
+    return text.count(". ") / max(len(text) / 1000, 1.0)
+
 
 @dataclass(frozen=True)
 class FilingSections:
@@ -169,9 +198,18 @@ def _looks_like(item: str, text: str) -> bool:
     return True
 
 
+_WS_RUN_RE = re.compile(r"[\s\xa0]+")
+
+
 def _containment(shorter: str, longer: str, windows: int = 25) -> float:
-    """Fraction of evenly-spaced 200-char windows of `shorter` found verbatim in
-    `longer`. A high value means `longer` contains `shorter`, i.e. they overlap."""
+    """Fraction of evenly-spaced 200-char windows of `shorter` found in
+    `longer`, compared on whitespace-collapsed text. A high value means
+    `longer` contains `shorter`, i.e. they overlap. The normalization
+    matters: edgartools sections and raw-text regex captures format
+    whitespace differently, so verbatim matching would miss real overlap
+    between sections from different parsers."""
+    shorter = _WS_RUN_RE.sub(" ", shorter)
+    longer = _WS_RUN_RE.sub(" ", longer)
     span = len(shorter) - 200
     if span <= windows:
         return 0.0
@@ -179,18 +217,65 @@ def _containment(shorter: str, longer: str, windows: int = 25) -> float:
     return sum(shorter[i * step : i * step + 200] in longer for i in range(windows)) / windows
 
 
+def _overlaps_sibling(
+    body: str, siblings: list[str], threshold: float = _MAX_SIBLING_CONTAINMENT
+) -> bool:
+    """True when a regex candidate materially contains, or is contained in, an
+    already-accepted sibling section. Checked at candidate-selection time so
+    the longest-first search skips over-captures and settles on the longest
+    candidate that coexists with its siblings, instead of accepting the
+    over-capture and losing the Item in the final overlap pass. The default
+    threshold is stricter than `_drop_overlapping`'s 0.5: a new candidate
+    sharing more than ~30% of a sibling is contaminated, not merely quoting
+    boilerplate."""
+    for sib in siblings:
+        shorter, longer = (body, sib) if len(body) < len(sib) else (sib, body)
+        if _containment(shorter, longer) > threshold:
+            return True
+    return False
+
+
+def _best_label(text: str) -> str | None:
+    """Which Item a piece of text reads like, for resolving mislabeled
+    near-duplicates: risk-saturated text is Item 1A, MD&A-hinted text is
+    Item 7, anything else is undecidable."""
+    if len(_RISK_HINT_RE.findall(text)) >= 10:
+        return "item_1a"
+    if _MDNA_HINT_RE.search(text):
+        return "item_7"
+    return None
+
+
 def _drop_overlapping(sections: dict[str, str], sources: dict[str, str]) -> None:
-    """Drop any section that largely contains a shorter sibling: the longer one
-    over-captured it, so the firm falls out via `parse_complete` rather than
-    being kept with corrupted counts. Provenance is dropped alongside."""
+    """Resolve section pairs that largely contain each other.
+
+    Two cases. When the pair is near-equal in size (same text filed under
+    two labels -- edgartools occasionally returns the risk factors as both
+    Item 1 and Item 1A), the copy whose label matches the content signature
+    is kept and the mislabeled one dropped; if the signature is
+    undecidable, both go. Otherwise the longer section over-captured the
+    shorter sibling and is dropped, so the firm falls out via the parse
+    floor rather than being kept with double-counted sentences. Provenance
+    is dropped alongside."""
     present = [k for k in RETURN_ITEMS if k in sections]
     to_drop: set[str] = set()
-    for a in present:
-        for b in present:
-            if a == b or b in to_drop:
+    for i, a in enumerate(present):
+        for b in present[i + 1:]:
+            if a in to_drop or b in to_drop:
                 continue
-            if len(sections[a]) < len(sections[b]) and _containment(sections[a], sections[b]) > 0.5:
-                to_drop.add(b)
+            shorter, longer = (a, b) if len(sections[a]) <= len(sections[b]) else (b, a)
+            if _containment(sections[shorter], sections[longer]) <= 0.5:
+                continue
+            if len(sections[shorter]) / len(sections[longer]) > 0.9:
+                fits = _best_label(sections[shorter])
+                if fits == a:
+                    to_drop.add(b)
+                elif fits == b:
+                    to_drop.add(a)
+                else:
+                    to_drop.update((a, b))
+            else:
+                to_drop.add(longer)
     for k in to_drop:
         sections.pop(k, None)
         sources.pop(k, None)
@@ -246,16 +331,33 @@ def _raw_text(filing) -> str:
         return ""
 
 
+# A real section heading sits at the start of its line, at most preceded by
+# a Part reference on the same line ("Part II. Item 7. ..."). A title-anchored
+# match preceded by sentence text ("... see Part I, Item 1A. Risk Factors.",
+# "... refer to “Item 7. Management's ...”") is a cross-reference: every such
+# capture starts inside another Item's body and duplicates its text.
+_LINE_PREFIX_RE = re.compile(
+    r"[\s\xa0]*(?:part[\s\xa0]+[ivx0-9]+\b[.,:;\s\xa0]*)?", re.IGNORECASE
+)
+
+
+def _at_line_start(text: str, start: int) -> bool:
+    line_begin = text.rfind("\n", 0, start) + 1
+    return _LINE_PREFIX_RE.fullmatch(text, line_begin, start) is not None
+
+
 def _header_starts(text: str, item: str) -> list[int]:
-    """Offsets of every title-anchored header for `item` in the raw text
-    (``items?`` also matches the plural "Items 1 and 2 ..." form; the separator
-    class tolerates "Item 7:" / "Item 7 -" and long right-aligned whitespace runs
-    while still admitting only punctuation between number and title)."""
+    """Offsets of every title-anchored, line-anchored header for `item` in the
+    raw text (``items?`` also matches the plural "Items 1 and 2 ..." form; the
+    separator class tolerates "Item 7:" / "Item 7 -" and long right-aligned
+    whitespace runs while still admitting only punctuation between number and
+    title). Matches that do not start their line are cross-references, not
+    headings, and are discarded."""
     pat = re.compile(
         rf"items?[\s\xa0]*{_ITEM_NUM[item]}{_HEADER_SEP}{{0,80}}?(?:{_ITEM_TITLE[item]})",
         re.IGNORECASE,
     )
-    return [m.start() for m in pat.finditer(text)]
+    return [m.start() for m in pat.finditer(text) if _at_line_start(text, m.start())]
 
 
 def _boundary_starts(text: str, item: str) -> list[int]:
@@ -289,6 +391,97 @@ def _regex_candidates(text: str, item: str) -> list[str]:
         end = min(ends) if ends else len(text)
         bodies.append(text[start:end].strip())
     return sorted(set(bodies), key=len, reverse=True)
+
+
+def _title_runs_on(key: str, body: str) -> bool:
+    """True when the candidate's opening header is a mid-sentence
+    cross-reference rather than a heading. Two signatures, both decided at
+    the first sentence punctuation within 80 chars of the Item title:
+
+    - the title reads on with a comma ("... Results of Operations, Sources
+      of Revenue-Medicare, for additional disclosure.") -- the title sits
+      inside a referencing sentence;
+    - the punctuation is immediately followed by a closing quote
+      ('Item 1 - Business - Government Regulation."') -- the title is a
+      quoted heading cited from another section (typically a risk factor
+      quoting an Item 1 subsection).
+
+    A real heading is instead followed by a period/colon and then body text.
+    """
+    m = re.match(
+        rf"items?[\s\xa0]*{_ITEM_NUM[key]}{_HEADER_SEP}{{0,80}}?(?:{_ITEM_TITLE[key]})",
+        body,
+        re.IGNORECASE,
+    )
+    if m is None:
+        return False
+    window = body[m.end() : m.end() + 80]
+    first_punct = re.search(r"[.,;:]", window)
+    if first_punct is None:
+        return False
+    if first_punct.group() == ",":
+        return True
+    following = window[first_punct.end() : first_punct.end() + 1]
+    return following in ("”", '"', "’", "'")
+
+
+def _passes_base_gates(key: str, body: str) -> bool:
+    """The validation every regex candidate has always had to clear."""
+    return (
+        _valid_len(body)
+        and not _overcaptured(key, body)
+        and _looks_like(key, body)
+        and not _is_incorporation_stub(body)
+        and not _is_crossref_head(body)
+    )
+
+
+def _fill_candidate(raw_text: str, key: str, stub: str | None, siblings: list[str]) -> str | None:
+    """Pick the regex body for a missing or stub Item, in two passes.
+
+    Pass 1 preserves the established behaviour for Items the structured view
+    missed entirely: the longest candidate clearing the base gates is taken,
+    provided it coexists with its siblings (the old code accepted such a
+    candidate only to lose it — or, worse, a sibling — in the final overlap
+    pass) and is no shorter than STUB_SECTION_LEN (a sub-stub fill would sit
+    below the parse floor anyway and only pollute the review).
+
+    Pass 2 is the strict recovery path for everything the first pass cannot
+    serve (truncation stubs, and fills whose best candidate is entangled with
+    a sibling): stricter length bounds, a narrative-density floor that rejects
+    tables of contents and property/financial tables, a tighter sibling-
+    containment cap, and a fragment guard so a stray header fragment is never
+    accepted in place of a section whose real body overlaps a sibling.
+    """
+    candidates = _regex_candidates(raw_text, key)
+
+    if stub is None:
+        first = next((b for b in candidates if _passes_base_gates(key, b)), None)
+        if (
+            first is not None
+            and len(first) >= STUB_SECTION_LEN
+            and not _overlaps_sibling(first, siblings, threshold=0.5)
+        ):
+            return first
+
+    longest_overlapping = 0
+    for body in candidates:
+        if not (
+            STUB_SECTION_LEN <= len(body) <= _MAX_REGEX_LEN
+            and _passes_base_gates(key, body)
+            and _narrative_density(body) >= _MIN_NARRATIVE_DENSITY
+            and not _title_runs_on(key, body)
+        ):
+            continue
+        if _overlaps_sibling(body, siblings):
+            longest_overlapping = max(longest_overlapping, len(body))
+            continue
+        if len(body) < _MIN_FRAGMENT_RATIO * longest_overlapping:
+            return None
+        if stub is not None and len(body) < 3 * len(stub):
+            continue
+        return body
+    return None
 
 
 def _edgartools_sections(tenk) -> dict[str, str]:
@@ -338,34 +531,76 @@ def assemble_sections(
 
     edgartools over-captures are dropped *first*, so an Item that the structured
     view swallowed into a sibling can still be recovered cleanly by the regex
-    rather than left missing. The regex then fills any absent Item; its output
-    passes the same validation, and a final overlap pass guards it too."""
+    rather than left missing. The regex then fills any absent Item and may
+    replace a truncation stub (see STUB_SECTION_LEN); its output passes the
+    same validation plus a sibling-overlap check at candidate-selection time,
+    and a final overlap pass guards the result too."""
     sections = dict(edgar_sections)
     sources = {k: "edgartools" for k in edgar_sections}
     _drop_overlapping(sections, sources)
 
-    missing = [k for k in RETURN_ITEMS if k not in sections]
+    fill = [
+        k for k in RETURN_ITEMS
+        if k not in sections or len(sections[k]) < STUB_SECTION_LEN
+    ]
     added = False
-    if missing and raw_text:
-        for key in missing:
-            # longest candidate that reads like the Item, is not over-captured,
-            # and is not a mere incorporation-by-reference stub
-            for body in _regex_candidates(raw_text, key):
-                if (
-                    _valid_len(body)
-                    and not _overcaptured(key, body)
-                    and _looks_like(key, body)
-                    and not _is_incorporation_stub(body)
-                    and not _is_crossref_head(body)
-                ):
-                    sections[key] = body
-                    sources[key] = "regex"
-                    added = True
-                    break
+    if fill and raw_text:
+        for key in fill:
+            stub = sections.get(key)
+            siblings = [sections[s] for s in sections if s != key]
+            body = _fill_candidate(raw_text, key, stub, siblings)
+            if body is not None:
+                sections[key] = body
+                sources[key] = "regex"
+                added = True
     if added:
         _drop_overlapping(sections, sources)
 
     return sections, sources
+
+
+_CHUNK_SPLIT_RE = re.compile(r"(?<=[.!?])[\s\xa0]+")
+
+
+def _text_chunks(text: str, min_len: int = 80) -> set[str]:
+    return {
+        _WS_RUN_RE.sub(" ", c).strip()
+        for c in _CHUNK_SPLIT_RE.split(text)
+        if len(c) > min_len
+    }
+
+
+def duplication_audit(sections: "pd.DataFrame") -> "pd.DataFrame":
+    """Cross-section duplication per filing, on whitespace-normalized
+    sentence chunks (> 80 chars). One row per section pair sharing at least
+    three chunks: `n_dup` and the share of the smaller section's chunks.
+
+    Small shares are genuine in-document repetition (firms restate segment
+    descriptions and forward-looking disclaimers across Items); a share
+    near 1.0 means one section is a mislabeled or over-captured copy of the
+    other and would double-count every sentence — exactly the failure mode
+    the parser's overlap guards exist to prevent, so this audit is their
+    regression check.
+    """
+    import pandas as pd
+
+    rows: list[dict] = []
+    for acc, grp in sections.groupby("accession_number"):
+        items = {r.item: _text_chunks(r.text) for r in grp.itertuples()}
+        keys = sorted(items)
+        for i, a in enumerate(keys):
+            for b in keys[i + 1:]:
+                common = items[a] & items[b]
+                if len(common) >= 3:
+                    rows.append(
+                        {
+                            "accession_number": acc,
+                            "pair": f"{a}+{b}",
+                            "n_dup": len(common),
+                            "pct_of_smaller": len(common) / max(1, min(len(items[a]), len(items[b]))),
+                        }
+                    )
+    return pd.DataFrame(rows, columns=["accession_number", "pair", "n_dup", "pct_of_smaller"])
 
 
 def extract_items(accession_number: str) -> FilingSections:

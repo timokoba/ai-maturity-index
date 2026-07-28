@@ -1,0 +1,717 @@
+Name,ID,Ticker,Exchange
+Johnson Controls,2100,JCI,NYSE
+CoStar Group,6951,CSGP,NASDAQ
+Principal Financial Group,2462,PFG,NASDAQ
+Steris,2498,STE,NYSE
+Progressive,2093,PGR,NYSE
+Nordson Corporation,6974,NDSN,NASDAQ
+Cincinnati Financial,2258,CINF,NASDAQ
+Firstenergy,2320,FE,NYSE
+Marathon Petroleum,1826,MPC,NYSE
+GE Aerospace,6960,GE,NYSE
+Avery Dennison,2227,AVY,NYSE
+J.M. Smucker,2378,SJM,NYSE
+Welltower,2538,WELL,NYSE
+Extra Space Storage,2314,EXR,NYSE
+Zions Bancorp,2553,ZION,NASDAQ
+Zions Bancorp,2553,ZIONL,NASDAQ
+Zions Bancorp,2553,ZIONO,NASDAQ
+Zions Bancorp,2553,ZIONP,NASDAQ
+IFlyTek,122,2230,SZSE
+Micron Technology,2107,MU,NASDAQ
+Lamb Weston Holdings,2392,LW,NYSE
+Idexx Laboratories,2363,IDXX,NASDAQ
+Diamondback Energy,2284,FANG,NASDAQ
+Globe Life,2340,GL,NYSE
+Tyler Technologies,3093,TYL,NYSE
+Charles Schwab Corporation,2255,SCHW,NYSE
+Charles Schwab Corporation,2255,SCHW.PRD,NYSE
+Charles Schwab Corporation,2255,SCHW.PRJ,NYSE
+American Airlines Group,1978,AAL,NASDAQ
+Valero Energy,1821,VLO,NYSE
+Lululemon Athletica,6970,LULU,NASDAQ
+Garmin,2335,GRMN,NYSE
+Caesars Entertainment,6945,CZR,NASDAQ
+Nike,830,NKE,NYSE
+Ameren,2208,AEE,NYSE
+Regions Financial,2475,RF,NYSE
+Regions Financial,2475,RF.PRB,NYSE
+Regions Financial,2475,RF.PRC,NYSE
+Regions Financial,2475,RF.PRE,NYSE
+Vulcan Materials,2532,VMC,NYSE
+Canadian Pacific,3160,CP,NYSE
+Axon Enterprise,6939,AXON,NASDAQ
+Microchip Technology,2415,MCHP,NASDAQ
+Arch Capital Group,6938,ACGL,NASDAQ
+Everest Re,2312,RE,NYSE
+Nextera Energy,2432,NEE,NYSE
+Nextera Energy,2432,NEE.PRO,NYSE
+Nextera Energy,2432,NEE.PRP,NYSE
+Nextera Energy,2432,NEE.PRQ,NYSE
+Brown & Brown,6943,BRO,NYSE
+Roper Technologies,2481,ROP,NYSE
+Jabil,3123,JBL,NYSE
+Carrier Global,2247,CARR,NYSE
+Raymond James Financial,2472,RJF,NYSE
+Mosaic Company,2421,MOS,NYSE
+SBA Communications,2484,SBAC,NASDAQ
+Darden Restaurants,2280,DRI,NYSE
+L3Harris Technologies,480,LHX,NYSE
+Mohawk Industries,2417,MHK,NYSE
+Fleetcor Technologies,2323,FLT,NYSE
+Nisource,2433,NI,NYSE
+Nisource,2433,NIMC,NYSE
+Nisource,2433,NI.PRB,NYSE
+Steel Dynamics,6980,STLD,NASDAQ
+Zimmer Biomet,2552,ZBH,NYSE
+Fair Isaac,6957,FICO,NYSE
+Nokia,949,NOK,NYSE
+Walmart,793,WMT,NYSE
+J. B. Hunt Transport Services,2377,JBHT,NASDAQ
+Tyson Foods,2018,TSN,NYSE
+Woodward,2826,WWD,NASDAQ
+Dish Network,2288,DISH,NASDAQ
+UDR,2515,UDR,NYSE
+Trimble,6983,TRMB,NASDAQ
+Ball,2228,BLL,NYSE
+Maxar Technologies,802,MAXR,NYSE
+Zebra Technologies,2551,ZBRA,NASDAQ
+Discover Financial Services,835,DFS,NYSE
+Dover Corporation,2291,DOV,NYSE
+Allstate,2019,ALL,NYSE
+Allstate,2019,ALL PR B,NYSE
+Allstate,2019,ALL PR G,NYSE
+Allstate,2019,ALL PR H,NYSE
+Allstate,2019,ALL PR I,NYSE
+CDW,2250,CDW,NASDAQ
+AbbVie,2083,ABBV,NYSE
+Arthur J. Gallagher & Co.,2221,AJG,NYSE
+Ulta Beauty,2516,ULTA,NASDAQ
+Illinois Tool Works,2365,ITW,NYSE
+Abbott,1515,ABT,NYSE
+Deere,2037,DE,NYSE
+Federal Realty Investment Trust,2317,FRT,NYSE
+Ford Motor Company,456,F,NYSE
+Domino's Pizza,3089,DPZ,NYSE
+Kellogg,2381,K,NYSE
+DTE Energy,2293,DTE,NYSE
+Whirlpool,2543,WHR,NYSE
+Stryker,2499,SYK,NYSE
+General Motors,820,GM,NYSE
+Masco,2408,MAS,NYSE
+Dow,2292,DOW,NYSE
+Borgwarner,2233,BWA,NYSE
+Centene,1905,CNC,NYSE
+Emerson Electric Company,2302,EMR,NYSE
+Jack Henry & Associates,2375,JKHY,NASDAQ
+O'Reilly Automotive,2442,ORLY,NASDAQ
+Bunge,1969,BG,NYSE
+Berkshire Hathaway,1792,BRK.A,NYSE
+Berkshire Hathaway,1792,BRK.B,NYSE
+Union Pacific,2519,UNP,NYSE
+Mastercard,2409,MA,NYSE
+Constellation Brands,2270,STZ,NYSE
+Constellation Brands,2270,STZ.B,NYSE
+Henry Schein,2351,HSIC,NASDAQ
+Kimco Realty,2385,KIM,NYSE
+Paychex,2451,PAYX,NASDAQ
+M&T Bank,2402,MTB,NYSE
+Vici Properties,6985,VICI,NYSE
+Xylem,2549,XYL,NYSE
+IBM,115,IBM,NYSE
+Broadridge Financial Solutions,2237,BR,NYSE
+Blackstone,6942,BX,NYSE
+PepsiCo,1893,PEP,NASDAQ
+Corning Incorporated,399,GLW,NYSE
+Regeneron Pharmaceuticals,1577,REGN,NASDAQ
+Paycom,2452,PAYC,NYSE
+Devon Energy,2283,DVN,NYSE
+Northrop Grumman,599,NOC,NYSE
+DXC Technology,2296,DXC,NYSE
+Huntington Ingalls Industries,2361,HII,NYSE
+Dollar Tree,2289,DLTR,NASDAQ
+Ehang,83,EH,NASDAQ
+Lumen Technologies,2253,LUMN,NYSE
+Pool Corporation,3091,POOL,NASDAQ
+Entergy,2303,ETR,NYSE
+Hormel Foods,2357,HRL,NYSE
+C. H. Robinson Worldwide,2239,CHRW,NASDAQ
+Fastenal,2316,FAST,NASDAQ
+Best Buy,1995,BBY,NYSE
+UnitedHealth Group,818,UNH,NYSE
+Unum Group,2523,UNM,NYSE
+Unum Group,2523,UNMA,NYSE
+HCA Healthcare,1963,HCA,NYSE
+Dollar General,2178,DG,NYSE
+Eastman Chemical,2298,EMN,NYSE
+Tractor Supply Company,2511,TSCO,NASDAQ
+Fiserv,2322,FISV,NASDAQ
+Generac,6964,GNRC,NYSE
+Alliant Energy,2205,LNT,NASDAQ
+Snap-On,2492,SNA,NYSE
+Kohl's,2387,KSS,NYSE
+Public Storage,2465,PSA,NYSE
+Public Storage,2465,PSA.PRG,NYSE
+Public Storage,2465,PSA.PRH,NYSE
+Public Storage,2465,PSA.PRI,NYSE
+Public Storage,2465,PSA.PRJ,NYSE
+Public Storage,2465,PSA.PRK,NYSE
+Public Storage,2465,PSA.PRL,NYSE
+Public Storage,2465,PSA.PRM,NYSE
+Public Storage,2465,PSA.PRN,NYSE
+Public Storage,2465,PSA.PRO,NYSE
+Public Storage,2465,PSA.PRP,NYSE
+Public Storage,2465,PSA.PRQ,NYSE
+Public Storage,2465,PSA.PRR,NYSE
+Public Storage,2465,PSA.PRS,NYSE
+Molina Healthcare,6972,MOH,NYSE
+Edison International,2300,EIX,NYSE
+Bio-Rad Laboratories,3086,BIO,NYSE
+Bio-Rad Laboratories,3086,BIO.B,NYSE
+Lam Research,2391,LRCX,NASDAQ
+Chipotle Mexican Grill,2256,CMG,NYSE
+Live Nation Entertainment,2398,LYV,NYSE
+Disney,1383,DIS,NYSE
+Enphase Energy,3161,ENPH,NASDAQ
+Equinix,2306,EQIX,NASDAQ
+Electronic Arts,1671,EA,NASDAQ
+Cooper Companies,2271,COO,NYSE
+Deckers Brands,6953,DECK,NYSE
+Teledyne Technologies,2819,TDY,NYSE
+Keysight Technologies,2383,KEYS,NYSE
+Clorox Company,2262,CLX,NYSE
+Netflix,176,NFLX,NASDAQ
+Seagate Technology,2485,STX,NASDAQ
+Chevron,1617,CVX,NYSE
+KLA-Tencor,1707,KLAC,NASDAQ
+Amgen,1570,4332,HKG
+Amgen,1570,AMGN,NASDAQ
+Autodesk,345,ADSK,NASDAQ
+Alexandria Real Estate Equities,2199,ARE,NYSE
+Apple,27,AAPL,NASDAQ
+Snap,694,SNAP,NYSE
+Monster Beverage,2419,MNST,NASDAQ
+Genentech,465,DNA,NYSE
+Gilead Sciences,2339,GILD,NASDAQ
+Oracle,617,ORCL,NYSE
+American Water Works,2211,AWK,NYSE
+Church & Dwight,2257,CHD,NYSE
+Catalent,3087,CTLT,NYSE
+Bristol-Myers Squibb,1395,BMY,NYSE
+Bristol-Myers Squibb,1395,CELG RT,NYSE
+Prudential Financial,1895,PFH,NYSE
+Prudential Financial,1895,PRS,NYSE
+Prudential Financial,1895,PRU,NYSE
+Merck,1492,MRK,NYSE
+Quest Diagnostics,2470,DGX,NYSE
+Kenvue,6968,KVUE,NYSE
+Verisk Analytics,2528,VRSK,NASDAQ
+Becton Dickinson,2231,BDX,NYSE
+Becton Dickinson,2231,BDXB,NYSE
+Campbell Soup,2242,CPB,NYSE
+Johnson & Johnson,842,JNJ,NYSE
+Zoetis,2554,ZTS,NYSE
+Automatic Data Processing,2224,ADP,NASDAQ
+PSEG,2464,PEG,NYSE
+Cognizant,806,CTSH,NASDAQ
+T-Mobile,831,TMUS,NASDAQ
+Microsoft,163,4338,HKG
+Microsoft,163,MSFT,NASDAQ
+Costco Wholesale,1805,COST,NASDAQ
+Monolithic Power Systems,6973,MPWR,NASDAQ
+Fortive,2328,FTV,NYSE
+Paccar,2448,PCAR,NASDAQ
+Alaska Air Group,2197,ALK,NYSE
+Hartford Financial Services,2347,HIG,NYSE
+Hubbell Incorporated,6986,HUBB,NYSE
+IQVIA,516,IQV,NYSE
+W. R. Berkley Corporation,2533,WRB,NYSE
+W. R. Berkley Corporation,2533,WRB.PRE,NYSE
+W. R. Berkley Corporation,2533,WRB.PRF,NYSE
+W. R. Berkley Corporation,2533,WRB.PRG,NYSE
+W. R. Berkley Corporation,2533,WRB.PRH,NYSE
+Otis Worldwide,2447,OTIS,NYSE
+Cigna,1953,CI,NYSE
+Stanley Black & Decker,2495,SWK,NYSE
+Stanley Black & Decker,2495,SWT,NYSE
+Amphenol,2214,APH,NYSE
+Aetna,308,AET,NYSE
+Leggett & Platt,2394,LEG,NYSE
+CMS Energy,2264,CMS,NYSE
+CMS Energy,2264,CMSA,NYSE
+CMS Energy,2264,CMSC,NYSE
+CMS Energy,2264,CMSD,NYSE
+CMS Energy,2264,CMS.PRC,NYSE
+FMC Corporation,2326,FMC,NYSE
+Hershey Company,2352,HSY,NYSE
+Comcast,396,CCZ,NYSE
+Comcast,396,CMCSA,NASDAQ
+PPL,2461,PPL,NYSE
+Ansys,2215,ANSS,NASDAQ
+Ametek,2213,AME,NYSE
+EPAM Systems,6954,EPAM,NYSE
+Viatris,3094,VTRS,NASDAQ
+Air Products & Chemicals,2196,APD,NYSE
+Cencora,1803,ABC,NYSE
+Universal Health Services,2522,UHS,NYSE
+West Pharmaceutical Services,3095,WST,NYSE
+Teleflex,2507,TFX,NYSE
+Hasbro,2348,HAS,NASDAQ
+Textron,2508,TXT,NYSE
+Citizens Financial Group,2260,CFG,NYSE
+Citizens Financial Group,2260,CFG.PRD,NYSE
+Citizens Financial Group,2260,CFG.PRE,NYSE
+CVS Health,1796,CVS,NYSE
+TE Connectivity,2505,TEL,NYSE
+LyondellBasell,2401,LYB,NYSE
+Royal Dutch Shell,682,RDS.A,NYSE
+Royal Dutch Shell,682,RDS.B,NYSE
+Hologic,2356,HOLX,NASDAQ
+Keurig Dr Pepper,6969,KDP,NASDAQ
+IPG Photonics,2373,IPGP,NASDAQ
+Boston Scientific,2235,BSX,NYSE
+Boston Scientific,2235,BSX-PR-A,NYSE
+Insulet,6965,PODD,NASDAQ
+Abiomed,2191,ABMD,NASDAQ
+Teradyne,3092,TER,NASDAQ
+Waters Corporation,2536,WAT,NYSE
+TJX,2027,TJX,NYSE
+NXP Semiconductors,606,NXPI,NASDAQ
+Philips,201,PHG,NYSE
+TechnipFMC,2506,FTI,NYSE
+Laboratory Corporation of America,2390,LH,NYSE
+Qorvo,2468,QRVO,NASDAQ
+Lowe's,1876,LOW,NYSE
+Ingersoll Rand,2367,IR,NYSE
+Ingersoll Rand,2367,IR,NYSE
+Old Dominion Freight Line,2444,ODFL,NASDAQ
+Hanesbrands,2345,HBI,NYSE
+Spotify,844,SPOT,NYSE
+Sanofi,989,SNY,NASDAQ
+SAP,812,SAP,NYSE
+Danaher,2279,DHR,NYSE
+Lennar,2395,LEN,NYSE
+Carnival,2246,CCL,NYSE
+Carnival,2246,CUK,NYSE
+Norwegian Cruise Line Holdings,2439,NCLH,NYSE
+Royal Caribbean Cruises,2483,RCL,NYSE
+Gen Digital,6963,GEN,NASDAQ
+First Solar,6958,FSLR,NASDAQ
+Toyota,790,TM,NYSE
+Sony,1132,SONY,NYSE
+Honda,795,HMC,NYSE
+Oneok,2446,OKE,NYSE
+Helmerich & Payne,2350,HP,NYSE
+Williams Companies,2544,WMB,NYSE
+PTC,6977,PTC,NASDAQ
+American Tower,2210,AMT,NYSE
+Iron Mountain,2374,IRM,NYSE
+Eversource Energy,2311,ES,NYSE
+Ginkgo Bioworks,6936,DNA,NYSE
+State Street,2497,STT,NYSE
+State Street,2497,STT.PRD,NYSE
+State Street,2497,STT.PRG,NYSE
+Vertex Pharmaceuticals,2529,VRTX,NASDAQ
+Boston Properties,2234,BXP,NYSE
+Texas Instruments,714,TXN,NASDAQ
+Copart,2272,CPRT,NASDAQ
+Match Group,6971,MTCH,NASDAQ
+Invitation Homes,6966,INVH,NYSE
+Comerica,2266,CMA,NYSE
+AT&T,805,T,NYSE
+Atmos Energy,2223,ATO,NYSE
+Jacobs Engineering Group,2376,J,NYSE
+CBRE Group,2249,CBRE,NYSE
+Southwest Airlines,2494,LUV,NYSE
+Aecom,2763,ACM,NYSE
+Apartment Investment & Management,2219,AIV,NYSE
+Newmont Corporation,2429,NEM,NYSE
+V.F. Corporation,2524,VFC,NYSE
+Davita,2281,DVA,NYSE
+Healthpeak Properties,2349,PEAK,NYSE
+Western Union,2540,WU,NYSE
+Cardinal Health,1807,CAH,NYSE
+Allegion,2202,ALLE,NYSE
+Eaton Corporation,427,ETN,NYSE
+Perrigo,2456,PRGO,NYSE
+Accenture,803,ACN,NYSE
+Allergan,2203,AGN,NYSE
+Linde,2397,LIN,NYSE
+Aptiv,336,APTV,NYSE
+Ross Stores,2482,ROST,NASDAQ
+Edwards Lifesciences,2301,EW,NYSE
+Skyworks Solutions,2490,SWKS,NASDAQ
+Flowserve Corporation,2325,FLS,NYSE
+Kimberly-Clark,2384,KMB,NYSE
+McKesson,1794,MCK,NYSE
+Pioneer Natural Resources,2458,PXD,NYSE
+Celanese,2251,CE,NASDAQ
+Celanese,2251,CE,NYSE
+Builders FirstSource,6944,BLDR,NYSE
+Aon,2216,AON,NYSE
+Willis Towers Watson,2545,WTW,NASDAQ
+Barclays,1230,BCS,NYSE
+Capital One,371,COF,NYSE
+Hilton Worldwide Holdings,2354,HLT,NYSE
+Booz Allen Hamilton,364,BAH,NYSE
+NVR,2441,NVR,NYSE
+General Dynamics,2048,GD,NYSE
+Leidos Holdings,839,LDOS,NYSE
+Verisign,2527,VRSN,NASDAQ
+Global Payments,2341,GPN,NYSE
+Westrock,2541,WRK,NYSE
+Corpay,6950,CPAY,NYSE
+Invesco,2372,IVZ,NYSE
+Equifax,2305,EFX,NYSE
+Pultegroup,2466,PHM,NYSE
+Intercontinental Exchange,2368,ICE,NYSE
+Rollins,2480,ROL,NYSE
+Coca-Cola,2096,KO,NYSE
+Southern Company,2493,SO,NYSE
+Southern Company,2493,SOJC,NYSE
+Southern Company,2493,SOJD,NYSE
+Southern Company,2493,SOJE,NYSE
+Southern Company,2493,SOLN,NYSE
+Norfolk Southern,2436,NSC,NYSE
+Delta Air Lines,1981,DAL,NYSE
+Genuine Parts,2338,GPC,NYSE
+United Parcel Service,1875,UPS,NYSE
+Newell Brands,2428,NWL,NASDAQ
+China Mobile Communications,1820,941,HKG
+China Mobile Communications,1820,CHL,NYSE
+Lenovo,936,992,HKG
+Baidu,37,9888,HKG
+Baidu,37,BIDU,NASDAQ
+JD.com,133,JD,NASDAQ
+JD.com,133,9618,HKG
+Cambricon,52,688256,SSE
+Qihoo 360,208,QIHU,NYSE
+Qihoo 360,208,601360,SSE
+Motorola Solutions,2422,MSI,NYSE
+Molson Coors Brewing Company,2418,TAP,NYSE
+Molson Coors Brewing Company,2418,TAP.A,NYSE
+Northern Trust,2437,NTRS,NASDAQ
+Northern Trust,2437,NTRSO,NASDAQ
+Boeing,784,BA,NYSE
+Conagra Brands,2267,CAG,NYSE
+LKQ Corporation,2399,LKQ,NASDAQ
+McDonald's,2412,MCD,NYSE
+Mondelez International,2169,MDLZ,NASDAQ
+United Airlines,2009,UAL,NASDAQ
+Kellanova,6967,K,NYSE
+GE Healthcare,462,GEHC,NASDAQ
+Kraft Heinz,2161,KHC,NASDAQ
+CME Group,2263,CME,NASDAQ
+Equity Residential,2307,EQR,NYSE
+CBOE Global Markets,2248,CBOE,NYSE
+Archer Daniels Midland,1894,ADM,NYSE
+Exelon,2049,EXC,NASDAQ
+Ventas,2526,VTR,NYSE
+Crown Castle International,2275,CCI,NYSE
+NRG Energy,2440,NRG,NYSE
+Coterra,3101,CTRA,NYSE
+Camden Property Trust,6946,CPT,NYSE
+Baker Hughes,1564,BKR,NASDAQ
+Phillips 66,1818,PSX,NYSE
+NOV,2426,NOV,NYSE
+APA Corporation,6937,APA,NASDAQ
+Centerpoint Energy,2252,CNP,NYSE
+ConocoPhillips,2029,COP,NYSE
+Halliburton,2344,HAL,NYSE
+Quanta Services,2469,PWR,NYSE
+Targa Resources,6982,TRGP,NYSE
+Marathon Oil,2403,MRO,NYSE
+Kinder Morgan,2386,KMI,NYSE
+Waste Management,2535,WM,NYSE
+EOG Resources,2304,EOG,NYSE
+Occidental Petroleum,2443,OXY,NYSE
+Apache Corporation,2218,APA,NASDAQ
+Sysco,1908,SYY,NYSE
+Schlumberger,676,SLB,NYSE
+International Paper,2369,IP,NYSE
+AutoZone,2225,AZO,NYSE
+Mid-America Apartments,2416,MAA,NYSE
+Mid-America Apartments,2416,MAA.PRI,NYSE
+Fedex,1891,FDX,NYSE
+Xerox,787,XRX,NYSE
+FactSet,6956,FDS,NYSE
+Booking.com,2232,BKNG,NASDAQ
+Booking.com,2232,PCLN,NASDAQ
+Pinnacle West Capital,2457,PNW,NYSE
+ON Semiconductor,6975,ON,NASDAQ
+Freeport-Mcmoran,2333,FCX,NYSE
+Republic Services,2476,RSG,NYSE
+Advance Auto Parts,2193,AAP,NYSE
+Advance Auto Parts,2193,ATVI,NASDAQ
+Martin Marietta Materials,2407,MLM,NYSE
+Vontier,3098,VNT,NYSE
+Amazon,23,AMZN,NASDAQ
+Expedia Group,822,EXPE,NASDAQ
+Weyerhaeuser,2542,WY,NYSE
+F5 Networks,2315,FFIV,NASDAQ
+Nordstrom,2435,JWN,NYSE
+Starbucks,2496,4337,HKG
+Starbucks,2496,SBUX,NASDAQ
+Zillow,780,Z,NASDAQ
+Zillow,780,ZG,NASDAQ
+Expeditors,2313,EXPD,NASDAQ
+Thermo Fisher Scientific,2509,TMO,NYSE
+RTX,815,RTX,NYSE
+Veralto,6984,VLTO,NYSE
+Revvity,2455,RVTY,NYSE
+Amcor,2207,AMCR,NYSE
+ABB,798,ABB,NYSE
+Chubb,2084,CB,NYSE
+Host Hotels & Resorts,2358,HST,NASDAQ
+Marriott International,2405,MAR,NASDAQ
+Lockheed Martin,553,LMT,NYSE
+Bath & Body Works,2388,BBWI,NYSE
+Mettler Toledo,2413,MTD,NYSE
+Huntington Bancshares,2360,HBAN,NASDAQ
+American Electric Power,2209,AEP,NASDAQ
+American Electric Power,2209,AEPPL,NASDAQ
+American Electric Power,2209,AEPPZ,NASDAQ
+Aflac,2195,AFL,NYSE
+Cummins,2277,CMI,NYSE
+Hikvision,106,2415,SZSE
+Alibaba,21,9988,HKG
+Alibaba,21,BABA,NYSE
+Morgan Stanley,585,MS,NYSE
+Tapestry,2504,TPR,NYSE
+Philip Morris International,2118,PM,NYSE
+Paramount Global,2530,PARA,NASDAQ
+Paramount Global,2530,PARAA,NASDAQ
+Paramount Global,2530,PARAP,NASDAQ
+Assurant,2222,AIZ,NYSE
+Assurant,2222,AIZN,NYSE
+Lemonade,150,LMND,NYSE
+Moody's,2420,MCO,NYSE
+Omnicom Group,2445,OMC,NYSE
+Goldman Sachs,471,GS,NYSE
+Loews,2400,L,NYSE
+Estée Lauder,2309,EL,NYSE
+Capri Holdings,2243,CPRI,NYSE
+Verizon,792,VZ,NYSE
+American Express,328,AXP,NYSE
+Vornado Realty Trust,2531,VNO,NYSE
+Vornado Realty Trust,2531,VNO.PRL,NYSE
+Vornado Realty Trust,2531,VNO.PRM,NYSE
+Vornado Realty Trust,2531,VNO.PRN,NYSE
+Vornado Realty Trust,2531,VNO.PRO,NYSE
+American International Group,3105,AIG,NYSE
+American International Group,3105,AIG PR A,NYSE
+Pfizer,1928,PFE,NYSE
+Msci,2423,MSCI,NYSE
+Nasdaq,2425,NDAQ,NASDAQ
+Marsh & Mclennan,2406,MMC,NYSE
+Coty,2274,COTY,NYSE
+Fox Corporation,2330,FOXA,NASDAQ
+S&P Global,668,SPGI,NYSE
+Colgate-Palmolive,2265,CL,NYSE
+PVH,2467,PVH,NYSE
+Travelers Companies,2111,TRV,NYSE
+Macy's,2176,M,NYSE
+Warner Bros. Discovery,3162,WBD,NASDAQ
+SL Green Realty,2491,SLG,NYSE
+SL Green Realty,2491,SLG.PRI,NYSE
+SL Green Realty,2491,SLG.PRI,NYSE
+News Corporation,2430,NWSA,NASDAQ
+MetLife,1883,MET,NYSE
+MetLife,1883,MET PR A,NYSE
+MetLife,1883,MET PR E,NYSE
+MetLife,1883,MET PR F,NYSE
+Consolidated Edison,2269,ED,NYSE
+Blackrock,358,BLK,NYSE
+Interpublic Group Of Companies,2370,IPG,NYSE
+Hess Corporation,2353,HES,NYSE
+MarketAxess,2404,MKTX,NASDAQ
+Take-Two Interactive,2503,TTWO,NASDAQ
+Ralph Lauren Corporation,2471,RL,NYSE
+Etsy,3090,ETSY,NASDAQ
+The Bank Of New York Mellon,2229,BK,NYSE
+Altria Group,2206,MO,NYSE
+Carmax,2245,KMX,NYSE
+Dominion Energy,2290,D,NYSE
+Supermicro,6981,SMCI,NASDAQ
+Cisco Systems,383,4333,HKG
+Cisco Systems,383,CSCO,NASDAQ
+Ebay,429,EBAY,NASDAQ
+Cadence Design Systems,2241,CDNS,NASDAQ
+Align Technology,2201,ALGN,NASDAQ
+Adobe,6,ADBE,NASDAQ
+PayPal,195,PYPL,NASDAQ
+Broadcom,2236,AVGO,NASDAQ
+Broadcom,2236,AVGOP,NASDAQ
+Nio,596,NIO,NYSE
+Tencent,245,700,HKG
+Ping An,202,2318,HKG
+Ping An,202,601318,SSE
+ZTE,289,63,SZSE
+ZTE,289,763,HKG
+Synchrony Financial,2501,SYF,NYSE
+Synchrony Financial,2501,SYF.PRA,NYSE
+United Rentals,2521,URI,NYSE
+Charter Communications,1985,CHTR,NASDAQ
+D. R. Horton,2278,DHI,NYSE
+Avalonbay Communities,2226,AVB,NYSE
+AES,2194,AES,NYSE
+AES,2194,AESC,NYSE
+T. Rowe Price Group,2502,TROW,NASDAQ
+Under Armour,2518,UA,NYSE
+McCormick,2410,MKC,NYSE
+Constellation Energy,6949,CEG,NASDAQ
+Biogen,1536,BIIB,NASDAQ
+Akamai Technologies,1765,AKAM,NASDAQ
+GE Vernova,6962,GEV,NYSE
+Moderna Therapeutics,1752,MRNA,NASDAQ
+Astrazeneca,341,AZN,NYSE
+Astrazeneca,341,AZN,NASDAQ
+Dentsply Sirona,2282,XRAY,NASDAQ
+Truist Financial,2514,TFC,NYSE
+Truist Financial,2514,TFC.PRI,NYSE
+Truist Financial,2514,TFC.PRO,NYSE
+Truist Financial,2514,TFC.PRR,NYSE
+Sealed Air,2486,SEE,NYSE
+Bank of America,811,BAC,NYSE
+Bank of America,811,BAC PR B,NYSE
+Bank of America,811,BAC PR E,NYSE
+Bank of America,811,BAC PR K,NYSE
+Bank of America,811,BAC PR L,NYSE
+Bank of America,811,BAC PR M,NYSE
+Bank of America,811,BAC PR N,NYSE
+Bank of America,811,BAC PR O,NYSE
+Bank of America,811,BAC PR P,NYSE
+Bank of America,811,BAC PR Q,NYSE
+Bank of America,811,BAC PR S,NYSE
+Bank of America,811,BML PR G,NYSE
+Bank of America,811,BML PR H,NYSE
+Bank of America,811,BML PR J,NYSE
+Bank of America,811,BML PR L,NYSE
+Bank of America,811,MER PR K,NYSE
+Albemarle,2198,ALB,NYSE
+Nucor,2185,NUE,NYSE
+Honeywell International,846,HON,NASDAQ
+Duke Energy,2294,DUK,NYSE
+Parker-Hannifin,2450,PH,NYSE
+Transdigm Group,2513,TDG,NYSE
+Sherwin-Williams,2488,SHW,NYSE
+Keycorp,2382,KEY,NYSE
+Caterpillar,1921,CAT,NYSE
+Walgreens Boots Alliance,1809,WBA,NASDAQ
+Fortune Brands Home & Security,2329,FBHS,NYSE
+CF Industries Holdings,2254,CF,NYSE
+Baxter International,2230,BAX,NYSE
+Las Vegas Sands,2393,LVS,NYSE
+MGM Resorts International,2414,MGM,NYSE
+Wynn Resorts,2546,WYNN,NASDAQ
+A.O. Smith,2217,AOS,NYSE
+WEC Energy Group,2537,WEC,NYSE
+Rockwell Automation,2479,ROK,NYSE
+Harley-Davidson,2346,HOG,NYSE
+Tesla,247,TSLA,NASDAQ
+Hewlett Packard Enterprise,487,HPE,NYSE
+HP,833,HPQ,NYSE
+Sempra Energy,2487,SRE,NYSE
+Sempra Energy,2487,SREA,NYSE
+Illumina,501,ILMN,NASDAQ
+DexCom,3088,DXCM,NASDAQ
+Realty Income Corporation,2473,O,NYSE
+Resmed,2477,RMD,NYSE
+Qualcomm,209,QCOM,NASDAQ
+Essex Property Trust,2308,ESS,NYSE
+Franklin Resources,2332,BEN,NYSE
+Franklin Resources,2332,BEN,NASDAQ
+Franklin Templeton,6959,BEN,NYSE
+Fortinet,2327,FTNT,NASDAQ
+Netapp,2427,NTAP,NASDAQ
+Intuitive Surgical,1516,ISRG,NASDAQ
+Juniper Networks,2379,JNPR,NYSE
+Procter & Gamble,639,PG,NYSE
+Cintas Corporation,2259,CTAS,NASDAQ
+Fifth Third Bancorp,2319,FITB,NASDAQ
+Kroger,1813,KR,NYSE
+Humana,1913,HUM,NYSE
+Yum! Brands,2550,YUM,NYSE
+Brown-Forman,2238,BF.A,NYSE
+Brown-Forman,2238,BF.B,NYSE
+Robert Half International,2478,RHI,NYSE
+Meta,87,META,NASDAQ
+PPG Industries,2460,PPG,NYSE
+Howmet Aerospace,2359,HWM,NYSE
+EQT,6955,EQT,NYSE
+Wabtec Corporation,2534,WAB,NYSE
+PNC Financial Services,2459,PNC,NYSE
+PNC Financial Services,2459,PNC.PRP,NYSE
+3M,298,MMM,NYSE
+Solventum,6979,SOLV,NYSE
+Ecolab,2299,ECL,NYSE
+DuPont,1780,DD,NYSE
+Incyte,2366,INCY,NASDAQ
+Analog Devices,331,ADI,NASDAQ
+Charles River Laboratories,6948,CRL,NYSE
+Evergy,2310,EVRG,NYSE
+Cerner Corporation,838,CERN,NASDAQ
+H&R Block,2343,HRB,NYSE
+Idex Corporation,2362,IEX,NYSE
+Packaging Corporation of America,2449,PKG,NYSE
+W.W. Grainger,2342,GWW,NYSE
+Medtronic,1553,MDT,NYSE
+Dayforce,6952,DAY,NYSE
+Ameriprise Financial,2212,AMP,NYSE
+U.S. Bancorp,2175,UB5,NYSE
+U.S. Bancorp,2175,USB PR A,NYSE
+U.S. Bancorp,2175,USB PR H,NYSE
+U.S. Bancorp,2175,USB PR P,NYSE
+U.S. Bancorp,2175,USB PR Q,NYSE
+Bio-Techne,6941,TECH,NASDAQ
+Pentair,2453,PNR,NYSE
+Target,710,TGT,NYSE
+Target,710,6161,HKG
+Xcel Energy,2547,XEL,NASDAQ
+ServiceNow,840,NOW,NYSE
+ServiceNow,840,NOW,NASDAQ
+Nvidia,184,NVDA,NASDAQ
+SVB Financial,2500,SIVB,NASDAQ
+Intel,127,INTC,NASDAQ
+Palo Alto Networks,623,PANW,NYSE
+Agilent Technologies,313,A,NYSE
+Advanced Micro Devices,327,AMD,NASDAQ
+Arista Networks,2220,ANET,NYSE
+Applied Materials,335,4336,HKG
+Applied Materials,335,AMAT,NASDAQ
+Eli Lilly And Company,434,LLY,NYSE
+Elevance Health,1831,ELV,NYSE
+Simon Property Group,2489,SPG,NYSE
+Simon Property Group,2489,SPG.PRJ,NYSE
+Corteva,2273,CTVA,NYSE
+CSX,2276,CSX,NASDAQ
+Regency Centers Corporation,2474,REG,NASDAQ
+Fidelity National Information Services,2318,FIS,NYSE
+Intuit,514,INTU,NASDAQ
+Google,101,GOOG,NASDAQ
+Synopsys,845,SNPS,NASDAQ
+Alphabet,796,GOOG,NASDAQ
+Alphabet,796,GOOGL,NASDAQ
+Gap,2334,GPS,NYSE
+Salesforce,219,CRM,NYSE
+Splunk,237,SPLK,NASDAQ
+Twitter,734,TWTR,NYSE
+Pinterest,635,PINS,NYSE
+PG&E Corporation,6976,PCG,NYSE
+Lyft,557,LYFT,NASDAQ
+Wells Fargo,807,WFC,NYSE
+Wells Fargo,807,WFC PR A,NYSE
+Wells Fargo,807,WFC PR C,NYSE
+Wells Fargo,807,WFC PR D,NYSE
+Wells Fargo,807,WFC PR L,NYSE
+Wells Fargo,807,WFC PR Q,NYSE
+Wells Fargo,807,WFC PR R,NYSE
+Wells Fargo,807,WFC PR Y,NYSE
+Wells Fargo,807,WFC PR Z,NYSE
+First Republic Bank,2321,FRC,NYSE
+Visa,2190,V,NYSE
+Dropbox,423,DBX,NASDAQ
+Dropbox,423,DBX,NYSE
+Digital Realty Trust,2285,DLR,NYSE
+Prologis,2463,PLD,NYSE
+Uber,737,UBER,NYSE

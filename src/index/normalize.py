@@ -37,6 +37,27 @@ def zscore(df: pd.DataFrame, columns: list[str] | None = None) -> pd.DataFrame:
     return out
 
 
+def rankscore(df: pd.DataFrame, columns: list[str] | None = None) -> pd.DataFrame:
+    """Percentile-rank normalization to [0, 1] (OECD "ranking" method).
+
+    Immune to outliers and distribution shape, at the price of losing all
+    level information; used as a sensitivity variant next to min-max.
+    NaN stays NaN.
+    """
+    out = df.copy()
+    cols = columns or [c for c in df.columns if pd.api.types.is_numeric_dtype(df[c])]
+    for c in cols:
+        if _is_passthrough(out[c]):
+            continue
+        s = out[c].astype(float)
+        n = s.notna().sum()
+        if n <= 1:
+            out[c] = 0.0
+        else:
+            out[c] = (s.rank(method="average") - 1) / (n - 1)
+    return out
+
+
 def minmax(df: pd.DataFrame, columns: list[str] | None = None) -> pd.DataFrame:
     out = df.copy()
     cols = columns or [c for c in df.columns if pd.api.types.is_numeric_dtype(df[c])]

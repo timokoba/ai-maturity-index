@@ -17,6 +17,18 @@ Babina, Fedyk, He, Hodson (2024, JFE):
       P(forward-looking) in [0, 1] (FinBERT-FLS) -- how prospectively, rather
       than merely descriptively, the firm frames its AI risk.
 
+      This measure discriminates weakly between firms: a single sentence
+      carries an intraclass correlation of only 0.009, because prospective
+      phrasing in risk factors is largely standard legal drafting. That is a
+      property of the disclosure, not a defect to engineer away, and the
+      reliability weighting in `src/index/reliability.py` already discounts
+      the indicator accordingly. Restricting the score to the *specific*
+      forward-looking class was tried and rejected: it roughly doubles the
+      ICC but only 3.4% of sentences fall in that class, so for 72% of firms
+      the result collapses to a near-binary flag, it breaks the JRC
+      distribution screen, and at a correlation of 0.33 with this measure it
+      is a different construct rather than a refinement of it.
+
 Missing data is marked, never conflated with zero:
 
 - an Item that did not parse (fewer than `MIN_ITEM_SENTENCES_FOR_PARSE`

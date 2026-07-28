@@ -1,0 +1,477 @@
+<title>RepRisk AI-Incidents — Explorative Analyse</title>
+<style>
+.viz-root {
+  --surface-1:      #fcfcfb;
+  --page-plane:     #f9f9f7;
+  --text-primary:   #0b0b0b;
+  --text-secondary: #52514e;
+  --text-muted:     #898781;
+  --gridline:       #e1e0d9;
+  --baseline:       #c3c2b7;
+  --border:         rgba(11,11,11,0.10);
+  --series-1:       #2a78d6; /* blue */
+  --series-2:       #1baf7a; /* aqua */
+  --series-3:       #eda100; /* yellow */
+  --series-6:       #e34948; /* red */
+  --seq-100:        #cde2fb;
+  --seq-700:        #0d366b;
+}
+@media (prefers-color-scheme: dark) {
+  .viz-root {
+    --surface-1:      #1a1a19;
+    --page-plane:     #0d0d0d;
+    --text-primary:   #ffffff;
+    --text-secondary: #c3c2b7;
+    --text-muted:     #898781;
+    --gridline:       #2c2c2a;
+    --baseline:       #383835;
+    --border:         rgba(255,255,255,0.10);
+    --series-1:       #3987e5;
+    --series-2:       #199e70;
+    --series-3:       #c98500;
+    --series-6:       #e66767;
+  }
+}
+:root[data-theme="dark"] .viz-root {
+  --surface-1:      #1a1a19;
+  --page-plane:     #0d0d0d;
+  --text-primary:   #ffffff;
+  --text-secondary: #c3c2b7;
+  --text-muted:     #898781;
+  --gridline:       #2c2c2a;
+  --baseline:       #383835;
+  --border:         rgba(255,255,255,0.10);
+  --series-1:       #3987e5;
+  --series-2:       #199e70;
+  --series-3:       #c98500;
+  --series-6:       #e66767;
+}
+:root[data-theme="light"] .viz-root {
+  --surface-1:      #fcfcfb;
+  --page-plane:     #f9f9f7;
+  --text-primary:   #0b0b0b;
+  --text-secondary: #52514e;
+  --text-muted:     #898781;
+  --gridline:       #e1e0d9;
+  --baseline:       #c3c2b7;
+  --border:         rgba(11,11,11,0.10);
+  --series-1:       #2a78d6;
+  --series-2:       #1baf7a;
+  --series-3:       #eda100;
+  --series-6:       #e34948;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; }
+
+.viz-root {
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  background: var(--page-plane);
+  color: var(--text-primary);
+  padding: 32px 20px 64px;
+  min-height: 100vh;
+}
+
+.wrap { max-width: 980px; margin: 0 auto; }
+
+header.page-header { margin-bottom: 28px; }
+header.page-header h1 { font-size: 1.65rem; margin: 0 0 6px; letter-spacing: -0.01em; }
+header.page-header p.sub { margin: 0; color: var(--text-secondary); font-size: 0.95rem; }
+header.page-header p.meta { margin: 10px 0 0; color: var(--text-muted); font-size: 0.8rem; }
+
+.card {
+  background: var(--surface-1);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 22px 24px;
+  margin-bottom: 20px;
+}
+
+.card h2 { font-size: 1.05rem; margin: 0 0 4px; }
+.card p.card-sub { margin: 0 0 18px; color: var(--text-secondary); font-size: 0.85rem; }
+
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+@media (max-width: 720px) {
+  .stat-grid { grid-template-columns: repeat(2, 1fr); }
+}
+.stat-tile {
+  background: var(--surface-1);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 18px 18px;
+}
+.stat-tile .value { font-size: 1.7rem; font-weight: 600; letter-spacing: -0.02em; }
+.stat-tile .label { margin-top: 4px; color: var(--text-secondary); font-size: 0.78rem; line-height: 1.35; }
+.stat-tile .value.accent { color: var(--series-6); }
+
+.legend { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 14px; font-size: 0.8rem; color: var(--text-secondary); }
+.legend .item { display: flex; align-items: center; gap: 6px; }
+.legend .swatch { width: 10px; height: 10px; border-radius: 2px; display: inline-block; }
+
+.chart-svg-wrap { position: relative; }
+svg text { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+.axis-label { fill: var(--text-muted); font-size: 11px; }
+.gridline { stroke: var(--gridline); stroke-width: 1; }
+.baseline { stroke: var(--baseline); stroke-width: 1; }
+.bar-label { fill: var(--text-primary); font-size: 11.5px; font-weight: 500; }
+.bar-value { fill: var(--text-secondary); font-size: 11px; }
+
+.bar-year { fill: var(--series-1); cursor: pointer; }
+.bar-year:hover { fill: var(--seq-700); }
+.bar-company { fill: var(--series-1); cursor: pointer; }
+.bar-company:hover { fill: var(--seq-700); }
+.bar-sev-overall { fill: var(--series-1); cursor: pointer; }
+.bar-sev-ai { fill: var(--series-6); cursor: pointer; }
+
+.tooltip {
+  position: fixed;
+  pointer-events: none;
+  background: var(--text-primary);
+  color: var(--page-plane);
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  line-height: 1.4;
+  opacity: 0;
+  transition: opacity 0.1s ease;
+  z-index: 50;
+  white-space: nowrap;
+}
+.tooltip.show { opacity: 1; }
+.tooltip b { font-weight: 600; }
+
+p.finding { font-size: 0.92rem; line-height: 1.6; color: var(--text-primary); margin: 0 0 12px; }
+p.finding:last-child { margin-bottom: 0; }
+.callout {
+  border-left: 3px solid var(--series-6);
+  padding: 10px 14px;
+  background: color-mix(in srgb, var(--series-6) 8%, transparent);
+  border-radius: 0 8px 8px 0;
+  margin: 14px 0;
+  font-size: 0.88rem;
+  color: var(--text-primary);
+}
+.callout b { display: block; margin-bottom: 3px; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.03em; color: var(--series-6); }
+
+table.data-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+table.data-table th, table.data-table td { text-align: left; padding: 7px 10px; border-bottom: 1px solid var(--gridline); }
+table.data-table th { color: var(--text-muted); font-weight: 500; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.02em; }
+table.data-table td.num, table.data-table th.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+.verdict-box {
+  background: var(--surface-1);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 22px 24px;
+}
+.verdict-title { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+.verdict-pill {
+  font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em;
+  padding: 4px 10px; border-radius: 20px;
+  background: color-mix(in srgb, var(--series-3) 20%, transparent);
+  color: var(--text-primary);
+  border: 1px solid color-mix(in srgb, var(--series-3) 45%, transparent);
+}
+
+footer.foot { margin-top: 24px; color: var(--text-muted); font-size: 0.75rem; text-align: center; }
+</style>
+
+<div class="viz-root">
+<div class="wrap">
+
+<header class="page-header">
+  <h1>RepRisk — AI-bezogene Incidents</h1>
+  <p class="sub">Explorative Analyse von <code>data_raw/wrds/reprisk.parquet</code> — ausschließlich reprisk-Rohdaten, kein externer Abgleich</p>
+  <p class="meta">1.194.528 Incidents · 2007–2025 · Feld <code>ai</code> (T/F) markiert AI-bezogene Kontroversen</p>
+</header>
+
+<div class="stat-grid">
+  <div class="stat-tile">
+    <div class="value">1.194.528</div>
+    <div class="label">Incidents insgesamt im Datensatz</div>
+  </div>
+  <div class="stat-tile">
+    <div class="value accent">2.098</div>
+    <div class="label">AI-geflaggte Incidents — 0,18% aller Incidents</div>
+  </div>
+  <div class="stat-tile">
+    <div class="value">1.077</div>
+    <div class="label">Unternehmen mit ≥1 AI-Incident (von 330.290 insgesamt)</div>
+  </div>
+  <div class="stat-tile">
+    <div class="value">84,2%</div>
+    <div class="label">dieser 1.077 Unternehmen haben genau 1 AI-Incident (907 von 1.077)</div>
+  </div>
+</div>
+
+<div class="card">
+  <h2>AI-Incidents pro Jahr</h2>
+  <p class="card-sub">2015–2025 · fast das gesamte Volumen liegt in den letzten zwei Jahren</p>
+  <div class="chart-svg-wrap">
+    <svg id="chart-year" viewBox="0 0 900 300" style="width:100%;height:auto;overflow:visible;"></svg>
+  </div>
+  <div class="callout">
+    <b>Konzentration in der Zeit</b>
+    79% aller AI-Incidents (1.659 von 2.098) stammen aus 2024 und 2025. Vor 2022 wurden im Schnitt nur 20–50 AI-Incidents pro Jahr erfasst — für ein Panel über mehrere Jahre bedeutet das massive Datenlücken in frühen Perioden.
+  </div>
+</div>
+
+<div class="card">
+  <h2>Top 15 Unternehmen nach AI-Incident-Anzahl</h2>
+  <p class="card-sub">Rohbezeichnung wie im Datensatz (<code>company_name</code>) · Balkenlänge = Anzahl AI-Incidents</p>
+  <div class="chart-svg-wrap">
+    <svg id="chart-company" viewBox="0 0 900 420" style="width:100%;height:auto;overflow:visible;"></svg>
+  </div>
+  <div class="callout">
+    <b>Long Tail & Entity-Fragmentierung</b>
+    Top 5 Unternehmen vereinen 20,0% aller AI-Incidents, Top 10 bereits 29,0%. Gleichzeitig fragmentiert reprisk manche Konzerne in mehrere Rechtseinheiten: "OpenAI Foundation" (82), "OpenAI Opco LLC" (48) und "OpenAI LLC" (3) sind faktisch ein Unternehmen (133 Incidents kombiniert — damit klarer Spitzenreiter statt Google). Ähnlich "X Corp" (22) und "X Holdings I Inc" (22) = 44 kombiniert. Das verzerrt jede Auswertung, die auf <code>company_name</code> statt einer konsolidierten Konzern-ID beruht.
+  </div>
+</div>
+
+<div class="card">
+  <h2>Schweregrad: AI-Incidents vs. Gesamtdatensatz</h2>
+  <p class="card-sub">Anteil je Severity-Stufe (1 = gering, 3 = hoch)</p>
+  <div class="legend">
+    <span class="item"><span class="swatch" style="background:var(--series-1)"></span>Gesamtdatensatz (n=1.194.528)</span>
+    <span class="item"><span class="swatch" style="background:var(--series-6)"></span>AI-geflaggt (n=2.098)</span>
+  </div>
+  <div class="chart-svg-wrap">
+    <svg id="chart-severity" viewBox="0 0 900 260" style="width:100%;height:auto;overflow:visible;"></svg>
+  </div>
+  <div class="callout">
+    <b>AI-Incidents sind überproportional schwerwiegend</b>
+    Severity-3-Anteil bei AI-Incidents: 12,4% — gegenüber 2,5% im Gesamtdatensatz. Das ist ein ~5-facher Anteil an den schwersten Fällen, bei gleichzeitig niedrigerem Severity-2-Anteil (14,4% vs. 27,0%). AI-Kontroversen werden also seltener erfasst, wenn sie aber auftreten, häufiger als gravierend eingestuft.
+  </div>
+</div>
+
+<div class="card">
+  <h2>Top-20-Tabelle</h2>
+  <p class="card-sub">Unternehmen, AI-Incident-Anzahl, kumulierter Anteil an allen 2.098 AI-Incidents</p>
+  <table class="data-table">
+    <thead><tr><th>Unternehmen</th><th class="num">Incidents</th><th class="num">Kumuliert %</th></tr></thead>
+    <tbody id="top20-body"></tbody>
+  </table>
+</div>
+
+<div class="verdict-box">
+  <div class="verdict-title">
+    <span class="verdict-pill">Einschätzung</span>
+  </div>
+  <p class="finding"><b>Als flächendeckender AI-Risiko-/Kontrovers-Indikator ist der reprisk-AI-Flag allein zu dünn besetzt.</b> Nur 1.077 von 330.290 Unternehmen im gesamten Datensatz (0,3%) haben je einen AI-Incident erhalten — für die überwiegende Mehrheit jeder breiteren Unternehmens-Stichprobe würde die Variable auf 0 kollabieren, also keine Varianz zum Differenzieren liefern.</p>
+  <p class="finding"><b>Extreme Konzentration auf wenige Konzerne.</b> 84,2% der betroffenen Unternehmen haben genau 1 Incident, während 5 Konzerne (Google, Meta, OpenAI, Microsoft, Amazon) bereits 20% des gesamten Volumens ausmachen — als Rohzähler bildet die Kennzahl im Kern "ist das ein Big-Tech-/AI-native-Konzern" ab, nicht ein abgestuftes Risikomaß.</p>
+  <p class="finding"><b>Historische Tiefe fehlt.</b> 79% aller AI-Incidents datieren aus 2024/2025; vor 2022 ist die Fallzahl pro Jahr einstellig bis niedrig zweistellig. Für einen Zeitreihen-/Panel-Ansatz über mehrere Jahre wäre die frühere Historie kaum belastbar.</p>
+  <p class="finding"><b>Positiv:</b> die Severity-Verschiebung (12,4% vs. 2,5% auf Stufe 3) deutet darauf hin, dass der AI-Flag tatsächlich ein qualitativ anderes, tendenziell gravierenderes Risikoprofil einfängt und nicht nur Rauschen ist — das spricht für inhaltliche Validität, sofern man die Nutzung auf den relevanten Teilbereich beschränkt.</p>
+  <p class="finding"><b>Empfehlung:</b> Der Indikator eignet sich eher als punktuelles Kontroll-/Robustheitsmerkmal für die Teilmenge exponierter Unternehmen (Big Tech, AI-native Firmen) oder als severity-gewichteter Zusatzscore, nicht als breit einsetzbare Kernvariable des Index. Vor Verwendung sollte zusätzlich die Entity-Fragmentierung (z. B. OpenAI/X-Aufsplittung) bereinigt werden.</p>
+</div>
+
+<footer class="foot">Quelle: WRDS RepRisk, data_raw/wrds/reprisk.parquet · Auswertung auf Incident-Ebene, Feld <code>ai</code></footer>
+
+</div>
+</div>
+
+<div class="tooltip" id="tooltip"></div>
+
+<script>
+const tooltip = document.getElementById('tooltip');
+function showTip(evt, html) {
+  tooltip.innerHTML = html;
+  tooltip.classList.add('show');
+  positionTip(evt);
+}
+function positionTip(evt) {
+  const pad = 14;
+  let x = evt.clientX + pad;
+  let y = evt.clientY + pad;
+  const tw = tooltip.offsetWidth, th = tooltip.offsetHeight;
+  if (x + tw > window.innerWidth - 8) x = evt.clientX - tw - pad;
+  if (y + th > window.innerHeight - 8) y = evt.clientY - th - pad;
+  tooltip.style.left = x + 'px';
+  tooltip.style.top = y + 'px';
+}
+function hideTip() { tooltip.classList.remove('show'); }
+
+const svgNS = 'http://www.w3.org/2000/svg';
+function el(tag, attrs) {
+  const e = document.createElementNS(svgNS, tag);
+  for (const k in attrs) e.setAttribute(k, attrs[k]);
+  return e;
+}
+
+/* ---------- Chart 1: incidents per year (bar) ---------- */
+(function () {
+  const data = [
+    {y:2015,v:6},{y:2016,v:0},{y:2017,v:0},{y:2018,v:25},{y:2019,v:46},
+    {y:2020,v:24},{y:2021,v:55},{y:2022,v:144},{y:2023,v:139},{y:2024,v:858},{y:2025,v:801}
+  ];
+  const svg = document.getElementById('chart-year');
+  const W = 900, H = 300;
+  const padL = 44, padR = 12, padT = 16, padB = 34;
+  const plotW = W - padL - padR, plotH = H - padT - padB;
+  const maxV = 900;
+  const n = data.length;
+  const gap = 10;
+  const bw = (plotW - gap * (n - 1)) / n;
+
+  [0,225,450,675,900].forEach(function(g){
+    const y = padT + plotH - (g/maxV)*plotH;
+    svg.appendChild(el('line', {x1:padL, x2:W-padR, y1:y, y2:y, class:'gridline'}));
+    const t = el('text', {x: padL-8, y: y+4, class:'axis-label', 'text-anchor':'end'});
+    t.textContent = g;
+    svg.appendChild(t);
+  });
+  svg.appendChild(el('line', {x1:padL, x2:W-padR, y1:padT+plotH, y2:padT+plotH, class:'baseline'}));
+
+  data.forEach(function(d, i){
+    const x = padL + i * (bw + gap);
+    const h = (d.v / maxV) * plotH;
+    const y = padT + plotH - h;
+    const r = el('rect', {x:x, y:y, width:bw, height:Math.max(h,1), rx:4, ry:4, class:'bar-year'});
+    r.addEventListener('mousemove', function(e){ showTip(e, '<b>'+d.y+'</b><br>'+d.v.toLocaleString('de-DE')+' AI-Incidents'); });
+    r.addEventListener('mouseleave', hideTip);
+    svg.appendChild(r);
+    if (d.v > 0) {
+      const vt = el('text', {x: x+bw/2, y: y-6, class:'bar-value', 'text-anchor':'middle'});
+      vt.textContent = d.v;
+      svg.appendChild(vt);
+    }
+    const xt = el('text', {x: x+bw/2, y: padT+plotH+18, class:'axis-label', 'text-anchor':'middle'});
+    xt.textContent = d.y;
+    svg.appendChild(xt);
+  });
+})();
+
+/* ---------- Chart 2: top 15 companies (horizontal bar) ---------- */
+(function () {
+  const data = [
+    {n:'Google LLC', v:111},
+    {n:'Meta Platforms Inc', v:86},
+    {n:'OpenAI Foundation', v:82},
+    {n:'Microsoft Corp (Bing)', v:72},
+    {n:'Amazon.com Inc', v:68},
+    {n:'OpenAI Opco LLC', v:48},
+    {n:'Clearview AI Inc', v:37},
+    {n:'Alphabet Inc', v:34},
+    {n:'Palantir Technologies', v:27},
+    {n:'X Corp (Twitter)', v:22},
+    {n:'X Holdings I Inc', v:22},
+    {n:'Instagram LLC', v:21},
+    {n:'Apple Inc', v:20},
+    {n:'X.AI Corp (xAI)', v:20},
+    {n:'AWS', v:14}
+  ];
+  const svg = document.getElementById('chart-company');
+  const W = 900, H = 420;
+  const padL = 190, padR = 46, padT = 10, padB = 10;
+  const plotW = W - padL - padR, plotH = H - padT - padB;
+  const maxV = 120;
+  const n = data.length;
+  const gap = 6;
+  const bh = (plotH - gap * (n - 1)) / n;
+
+  data.forEach(function(d, i){
+    const y = padT + i * (bh + gap);
+    const w = (d.v / maxV) * plotW;
+    const lbl = el('text', {x: padL-10, y: y+bh/2+4, class:'bar-label', 'text-anchor':'end'});
+    lbl.textContent = d.n;
+    svg.appendChild(lbl);
+    const r = el('rect', {x:padL, y:y, width:Math.max(w,2), height:bh, rx:4, ry:4, class:'bar-company'});
+    r.addEventListener('mousemove', function(e){ showTip(e, '<b>'+d.n+'</b><br>'+d.v+' AI-Incidents'); });
+    r.addEventListener('mouseleave', hideTip);
+    svg.appendChild(r);
+    const vt = el('text', {x: padL+w+8, y: y+bh/2+4, class:'bar-value'});
+    vt.textContent = d.v;
+    svg.appendChild(vt);
+  });
+})();
+
+/* ---------- Chart 3: severity distribution comparison ---------- */
+(function () {
+  const overall = [70.5, 27.0, 2.5];
+  const ai = [73.2, 14.4, 12.4];
+  const labels = ['Severity 1', 'Severity 2', 'Severity 3'];
+  const svg = document.getElementById('chart-severity');
+  const W = 900, H = 260;
+  const padL = 44, padR = 12, padT = 16, padB = 34;
+  const plotW = W - padL - padR, plotH = H - padT - padB;
+  const maxV = 80;
+  const n = 3;
+  const groupGap = 34;
+  const groupW = (plotW - groupGap * (n - 1)) / n;
+  const barGap = 8;
+  const barW = (groupW - barGap) / 2;
+
+  [0,20,40,60,80].forEach(function(g){
+    const y = padT + plotH - (g/maxV)*plotH;
+    svg.appendChild(el('line', {x1:padL, x2:W-padR, y1:y, y2:y, class:'gridline'}));
+    const t = el('text', {x: padL-8, y: y+4, class:'axis-label', 'text-anchor':'end'});
+    t.textContent = g+'%';
+    svg.appendChild(t);
+  });
+  svg.appendChild(el('line', {x1:padL, x2:W-padR, y1:padT+plotH, y2:padT+plotH, class:'baseline'}));
+
+  for (let i = 0; i < n; i++) {
+    const gx = padL + i * (groupW + groupGap);
+
+    const h1 = (overall[i]/maxV)*plotH;
+    const y1 = padT+plotH-h1;
+    const r1 = el('rect', {x:gx, y:y1, width:barW, height:Math.max(h1,1), rx:4, ry:4, class:'bar-sev-overall'});
+    r1.addEventListener('mousemove', function(e){ showTip(e, '<b>'+labels[i]+' · Gesamt</b><br>'+overall[i]+'%'); });
+    r1.addEventListener('mouseleave', hideTip);
+    svg.appendChild(r1);
+    const vt1 = el('text', {x:gx+barW/2, y:y1-6, class:'bar-value', 'text-anchor':'middle'});
+    vt1.textContent = overall[i]+'%';
+    svg.appendChild(vt1);
+
+    const h2 = (ai[i]/maxV)*plotH;
+    const y2 = padT+plotH-h2;
+    const x2 = gx+barW+barGap;
+    const r2 = el('rect', {x:x2, y:y2, width:barW, height:Math.max(h2,1), rx:4, ry:4, class:'bar-sev-ai'});
+    r2.addEventListener('mousemove', function(e){ showTip(e, '<b>'+labels[i]+' · AI-geflaggt</b><br>'+ai[i]+'%'); });
+    r2.addEventListener('mouseleave', hideTip);
+    svg.appendChild(r2);
+    const vt2 = el('text', {x:x2+barW/2, y:y2-6, class:'bar-value', 'text-anchor':'middle'});
+    vt2.textContent = ai[i]+'%';
+    svg.appendChild(vt2);
+
+    const xt = el('text', {x: gx+groupW/2, y: padT+plotH+20, class:'axis-label', 'text-anchor':'middle'});
+    xt.textContent = labels[i];
+    svg.appendChild(xt);
+  }
+})();
+
+/* ---------- Top 20 table ---------- */
+(function () {
+  const rows = [
+    ['Google LLC (formerly Google Inc)', 111, 5.3],
+    ['Meta Platforms Inc (Meta; formerly Facebook Inc)', 86, 9.4],
+    ['OpenAI Foundation (formerly OpenAI Inc)', 82, 13.3],
+    ['Microsoft Corp (Bing)', 72, 16.7],
+    ['Amazon.com Inc (Amazon)', 68, 20.0],
+    ['OpenAI Opco LLC (OpenAI LP; formerly OpenAI LP)', 48, 22.3],
+    ['Clearview AI Inc', 37, 24.0],
+    ['Alphabet Inc', 34, 25.6],
+    ['Palantir Technologies Inc (Palantir)', 27, 26.9],
+    ['X Corp (formerly Twitter Inc)', 22, 28.0],
+    ['X Holdings I Inc', 22, 29.0],
+    ['Instagram LLC', 21, 30.0],
+    ['Apple Inc (Apple)', 20, 31.0],
+    ['X.AI Corp (xAI)', 20, 31.9],
+    ['Amazon Web Services Inc (AWS)', 14, 32.6],
+    ['Character Technologies Inc (Character.AI)', 14, 33.3],
+    ['International Business Machines Corp (IBM)', 12, 33.8],
+    ['Hangzhou DeepSeek Artificial Intelligence Co Ltd', 11, 34.4],
+    ['Anthropic PBC (Anthropic Inc)', 11, 34.9],
+    ['Stability AI Ltd', 10, 35.4]
+  ];
+  const body = document.getElementById('top20-body');
+  rows.forEach(function(r){
+    const tr = document.createElement('tr');
+    tr.innerHTML = '<td>'+r[0]+'</td><td class="num">'+r[1]+'</td><td class="num">'+r[2].toFixed(1)+'%</td>';
+    body.appendChild(tr);
+  });
+})();
+</script>

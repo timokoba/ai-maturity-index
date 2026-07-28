@@ -1,0 +1,301 @@
+year,rank,company_name,country,index_score,industry_group,forbes_rank,company_sales,company_profits,company_assets
+2025,1,NVIDIA,United States,100.0,Technology Products and Services,0,0,0,0
+2025,2,Microsoft,United States,90.70893962,Technology Products and Services,0,0,0,0
+2025,3,Alphabet,United States,88.54615212,Technology Products and Services,0,0,0,0
+2025,4,Meta Platforms,United States,80.6274252,Technology Products and Services,0,0,0,0
+2025,5,Amazon,United States,79.81242291,Technology Products and Services,0,0,0,0
+2025,6,SAP,Germany,77.0935031,Technology Products and Services,0,0,0,0
+2025,7,IBM,United States,76.77760122,Technology Products and Services,0,0,0,0
+2025,8,Tencent Holdings,China,75.92169468,Technology Products and Services,0,0,0,0
+2025,9,Sony,Japan,75.28983384,Technology Products and Services,0,0,0,0
+2025,10,Mastercard,United States,74.0745807,Financial Services,0,0,0,0
+2025,11,Alibaba Group,China,73.4953559,Technology Products and Services,0,0,0,0
+2025,12,Intel,United States,73.13752217,Technology Products and Services,0,0,0,0
+2025,13,Cisco Systems,United States,72.36036987,Technology Products and Services,0,0,0,0
+2025,14,Oracle,United States,70.36619467,Technology Products and Services,0,0,0,0
+2025,15,Accenture,Ireland,70.10629709,Professional Services,0,0,0,0
+2025,16,Salesforce,United States,69.72148881,Technology Products and Services,0,0,0,0
+2025,17,Deutsche Telekom,Germany,69.55267669,Telecommunications,0,0,0,0
+2025,18,Samsung Electronics,South Korea,67.56095347,Technology Products and Services,0,0,0,0
+2025,19,KKR,United States,67.49508706,Financial Services,0,0,0,0
+2025,20,Qualcomm,United States,65.1345576,Technology Products and Services,0,0,0,0
+2025,21,BlackRock,United States,63.34818915,Financial Services,0,0,0,0
+2025,22,KDDI,Japan,63.34748411,Telecommunications,0,0,0,0
+2025,23,AstraZeneca,United Kingdom,63.16866715,Pharmaceuticals,0,0,0,0
+2025,24,UBS,Switzerland,63.04932263,Financial Services,0,0,0,0
+2025,25,Volkswagen Group,Germany,61.69742131,Automotive,0,0,0,0
+2025,26,Mercedes-Benz Group,Germany,61.62358813,Automotive,0,0,0,0
+2025,27,Goldman Sachs Group,United States,60.38196559,Financial Services,0,0,0,0
+2025,28,Siemens,Germany,59.49967252,Manufacturing,0,0,0,0
+2025,29,Visa,United States,58.5955058,Financial Services,0,0,0,0
+2025,30,Macquarie Group,Australia,58.33225709,Financial Services,0,0,0,0
+2025,31,HSBC Holdings,United Kingdom,58.33031892,Financial Services,0,0,0,0
+2025,32,Apple,United States,57.92813561,Technology Products and Services,0,0,0,0
+2025,33,Dell Technologies,United States,57.68373768,Technology Products and Services,0,0,0,0
+2025,34,GE Aerospace,United States,56.9808867,Manufacturing,0,0,0,0
+2025,35,Hitachi,Japan,56.77342248,Manufacturing,0,0,0,0
+2025,36,Morgan Stanley,United States,56.63052306,Financial Services,0,0,0,0
+2025,37,Nippon Telegraph & Tel,Japan,56.47463588,Telecommunications,0,0,0,0
+2025,38,Ping An Insurance Group,China,55.99220545,Insurance,0,0,0,0
+2025,39,Citigroup,United States,55.80187364,Financial Services,0,0,0,0
+2025,40,JPMorgan Chase,United States,55.33202562,Financial Services,0,0,0,0
+2025,41,Apollo Global Management,United States,55.22688199,Financial Services,0,0,0,0
+2025,42,Bank of New York Mellon,United States,55.20107206,Financial Services,0,0,0,0
+2025,43,Barclays,United Kingdom,55.12152998,Financial Services,0,0,0,0
+2025,44,BNP Paribas,France,55.10760027,Financial Services,0,0,0,0
+2025,45,Hon Hai Precision,Taiwan,55.0187584,Technology Products and Services,0,0,0,0
+2025,46,Reliance Industries,India,54.68749959,Diversified,0,0,0,0
+2025,47,FedEx,United States,54.37118667,Transportation and Logistics,0,0,0,0
+2025,48,Merck & Co.,United States,53.96446194,Pharmaceuticals,0,0,0,0
+2025,49,Commonwealth Bank,Australia,53.89069441,Financial Services,0,0,0,0
+2025,50,Eli Lilly,United States,53.57687057,Pharmaceuticals,0,0,0,0
+2025,51,Deutsche Bank,Germany,52.77994551,Financial Services,0,0,0,0
+2025,52,Zurich Insurance Group,Switzerland,52.72665294,Insurance,0,0,0,0
+2025,53,Schneider Electric,France,52.62061016,Manufacturing,0,0,0,0
+2025,54,Canadian Imperial Bank,Canada,52.17109438,Financial Services,0,0,0,0
+2025,55,Intesa Sanpaolo Assicura,Italy,52.10774845,Financial Services,0,0,0,0
+2025,56,Sumitomo,Japan,52.09115553,Diversified,0,0,0,0
+2025,57,Novartis,Switzerland,52.02613404,Pharmaceuticals,0,0,0,0
+2025,58,Sanofi,France,51.66161804,Pharmaceuticals,0,0,0,0
+2025,59,BYD,China,51.41953507,Automotive,0,0,0,0
+2025,60,Equinor,Norway,51.31146848,Energy and Utilities,0,0,0,0
+2025,61,Mitsui,Japan,51.02423669,Diversified,0,0,0,0
+2025,62,AT&T,United States,50.94908761,Telecommunications,0,0,0,0
+2025,63,Marubeni,Japan,50.79761342,Diversified,0,0,0,0
+2025,64,Walmart,United States,50.70900276,Consumer Goods and Retail,0,0,0,0
+2025,65,UniCredit,Italy,50.54499753,Financial Services,0,0,0,0
+2025,66,Industrial Bank,China,50.1622987,Financial Services,0,0,0,0
+2025,67,ABB,Switzerland,49.83839865,Manufacturing,0,0,0,0
+2025,68,Medtronic,Ireland,49.76825628,Healthcare,0,0,0,0
+2025,69,Novo Nordisk,Denmark,49.74478414,Pharmaceuticals,0,0,0,0
+2025,70,Mitsubishi,Japan,49.63502201,Diversified,0,0,0,0
+2025,71,Honda Motor,Japan,49.56372644,Automotive,0,0,0,0
+2025,72,Lloyds Banking Group,United Kingdom,49.55271398,Financial Services,0,0,0,0
+2025,73,International Holding Company,United Arab Emirates,49.54149314,Diversified,0,0,0,0
+2025,74,Denso,Japan,49.43562162,Automotive,0,0,0,0
+2025,75,Contemporary Amperex Technology,China,49.26991515,Manufacturing,0,0,0,0
+2025,76,Tokio Marine Holdings,Japan,49.16376389,Insurance,0,0,0,0
+2025,77,Axis Bank,India,49.14714529,Financial Services,0,0,0,0
+2025,78,JD.com,China,48.98565484,Technology Products and Services,0,0,0,0
+2025,79,Ford Motor,United States,48.88248648,Automotive,0,0,0,0
+2025,80,Stellantis,Netherlands,48.79798623,Automotive,0,0,0,0
+2025,81,RBC,Canada,48.65459298,Financial Services,0,0,0,0
+2025,82,AXA Group,France,48.35228114,Insurance,0,0,0,0
+2025,83,KIA,South Korea,47.59392253,Automotive,0,0,0,0
+2025,84,CVS Health,United States,47.42471365,Healthcare,0,0,0,0
+2025,85,Taiwan Semiconductor,Taiwan,47.14041909,Technology Products and Services,0,0,0,0
+2025,86,UnitedHealth Group,United States,46.98505999,Healthcare,0,0,0,0
+2025,87,Bank of America,United States,46.80475015,Financial Services,0,0,0,0
+2025,88,General Motors,United States,46.7877776,Automotive,0,0,0,0
+2025,89,DBS,Singapore,46.67118477,Financial Services,0,0,0,0
+2025,90,GSK,United Kingdom,46.44590023,Pharmaceuticals,0,0,0,0
+2025,91,Mitsubishi UFJ Financial,Japan,46.27016322,Financial Services,0,0,0,0
+2025,92,Santander,Spain,46.23692316,Financial Services,0,0,0,0
+2025,93,Sun Life Financial,Canada,46.1049734,Financial Services,0,0,0,0
+2025,94,John Deere,United States,46.04362844,Construction,0,0,0,0
+2025,95,Mizuho Financial,Japan,45.65552613,Financial Services,0,0,0,0
+2025,96,Humana,United States,45.62778374,Insurance,0,0,0,0
+2025,97,NatWest Group,United Kingdom,45.58113918,Financial Services,0,0,0,0
+2025,98,McKesson,United States,45.54800474,Healthcare,0,0,0,0
+2025,99,SAIC Motor,China,45.44784498,Automotive,0,0,0,0
+2025,100,Bank of Communications,China,45.34474228,Financial Services,0,0,0,0
+2025,101,Roche Holding,Switzerland,45.17314993,Pharmaceuticals,0,0,0,0
+2025,102,Verizon Communications,United States,44.93467498,Telecommunications,0,0,0,0
+2025,103,Shanghai Pudong Development,China,44.72810707,Financial Services,0,0,0,0
+2025,104,China Construction Bank,China,44.67027308,Financial Services,0,0,0,0
+2025,105,BMW Group,Germany,44.51656385,Automotive,0,0,0,0
+2025,106,Cigna,United States,44.31896461,Healthcare,0,0,0,0
+2025,107,Standard Chartered,United Kingdom,44.23408472,Financial Services,0,0,0,0
+2025,108,Thermo Fisher Scientific,United States,44.03867484,Healthcare,0,0,0,0
+2025,109,Kroger,United States,43.63247247,Consumer Goods and Retail,0,0,0,0
+2025,110,Bank of Montreal,Canada,43.36476797,Financial Services,0,0,0,0
+2025,111,ENGIE,France,43.33208453,Energy and Utilities,0,0,0,0
+2025,112,NextEra Energy,United States,42.98417286,Energy and Utilities,0,0,0,0
+2025,113,Comcast,United States,42.97255811,Media & Advertising,0,0,0,0
+2025,114,MS&AD Insurance,Japan,42.96783685,Insurance,0,0,0,0
+2025,115,ICBC,China,42.85896245,Financial Services,0,0,0,0
+2025,116,PayPal,United States,42.76465145,Financial Services,0,0,0,0
+2025,117,SEB AB,Sweden,42.69225977,Financial Services,0,0,0,0
+2025,118,First Abu Dhabi Bank,United Arab Emirates,42.46295617,Financial Services,0,0,0,0
+2025,119,Fiserv,United States,42.4316029,Financial Services,0,0,0,0
+2025,120,China Telecom,China,42.41456755,Telecommunications,0,0,0,0
+2025,121,ING Group,Netherlands,42.29986437,Financial Services,0,0,0,0
+2025,122,Honeywell International,United States,42.14499053,Manufacturing,0,0,0,0
+2025,123,Walt Disney,United States,41.82106765,Media & Advertising,0,0,0,0
+2025,124,EssilorLuxottica,France,41.62909453,Consumer Goods and Retail,0,0,0,0
+2025,125,Charter Communications,United States,41.42617746,Telecommunications,0,0,0,0
+2025,126,BBVA-Banco Bilbao Vizcaya,Spain,41.2906368,Financial Services,0,0,0,0
+2025,127,Westpac Banking Group,Australia,41.26812091,Financial Services,0,0,0,0
+2025,128,VINCI,France,41.26283161,Manufacturing,0,0,0,0
+2025,129,SLB,France,41.1660401,Energy and Utilities,0,0,0,0
+2025,130,China Merchants Bank,China,41.15336064,Financial Services,0,0,0,0
+2025,131,Dai-ichi Life Insurance,Japan,40.70102181,Insurance,0,0,0,0
+2025,132,Johnson & Johnson,United States,40.31592809,Pharmaceuticals,0,0,0,0
+2025,133,CaixaBank,Spain,40.28151485,Financial Services,0,0,0,0
+2025,134,Volvo Group,Sweden,40.22680648,Automotive,0,0,0,0
+2025,135,Saudi Arabian Oil Company (Saudi Aramco),Saudi Arabia,40.16621509,Energy and Utilities,0,0,0,0
+2025,136,Travelers,United States,40.13201879,Insurance,0,0,0,0
+2025,137,Netflix,United States,40.03792758,Media & Advertising,0,0,0,0
+2025,138,Wells Fargo,United States,39.78872562,Financial Services,0,0,0,0
+2025,139,Hyundai Motor,South Korea,39.6834621,Automotive,0,0,0,0
+2025,140,AIA Group,Hong Kong,39.54193852,Financial Services,0,0,0,0
+2025,141,Automatic Data Processing,United States,39.4459491,Technology Products and Services,0,0,0,0
+2025,142,BHP Group,Australia,39.26841094,Mining,0,0,0,0
+2025,143,NAB - National Australia Bank,Australia,39.16202277,Financial Services,0,0,0,0
+2025,144,Tesla,United States,39.15863168,Automotive,0,0,0,0
+2025,145,MetLife,United States,39.13400349,Insurance,0,0,0,0
+2025,146,Lockheed Martin,United States,39.02417,Manufacturing,0,0,0,0
+2025,147,Manulife,Canada,38.99534292,Financial Services,0,0,0,0
+2025,148,Petrobras,Brazil,38.72206939,Energy and Utilities,0,0,0,0
+2025,149,Swiss Re,Switzerland,38.61231297,Insurance,0,0,0,0
+2025,150,RTX,United States,38.54492514,Manufacturing,0,0,0,0
+2025,151,Itochu,Japan,38.52662526,Diversified,0,0,0,0
+2025,152,Rio Tinto,United Kingdom,38.31136841,Mining,0,0,0,0
+2025,153,Capital One,United States,37.9657717,Financial Services,0,0,0,0
+2025,154,PTT,Thailand,37.88198791,Energy and Utilities,0,0,0,0
+2025,155,Cencora,United States,37.84296473,Healthcare,0,0,0,0
+2025,156,ASML Holding,Netherlands,37.83401033,Technology Products and Services,0,0,0,0
+2025,157,Allianz,Germany,37.64729225,Insurance,0,0,0,0
+2025,158,Toyota Motor,Japan,37.54759491,Automotive,0,0,0,0
+2025,159,Société Générale,France,37.20984223,Financial Services,0,0,0,0
+2025,160,TD Bank Group,Canada,37.13559515,Financial Services,0,0,0,0
+2025,161,China Mobile,China,37.03582074,Telecommunications,0,0,0,0
+2025,162,Munich Re,Germany,37.02737157,Insurance,0,0,0,0
+2025,163,National Grid,United Kingdom,36.67016582,Energy and Utilities,0,0,0,0
+2025,164,Allstate,United States,36.56690898,Insurance,0,0,0,0
+2025,165,Procter & Gamble,United States,36.37125648,Consumer Goods and Retail,0,0,0,0
+2025,166,Banorte,Mexico,36.29815689,Financial Services,0,0,0,0
+2025,167,Banco do Brasil,Brazil,35.65101904,Financial Services,0,0,0,0
+2025,168,United Overseas Bank,Singapore,35.63978107,Financial Services,0,0,0,0
+2025,169,Chevron,United States,35.49783788,Energy and Utilities,0,0,0,0
+2025,170,Oversea-Chinese Banking,Singapore,35.26315936,Financial Services,0,0,0,0
+2025,171,Bank of China,China,34.87897906,Financial Services,0,0,0,0
+2025,172,Midea Group,China,34.79959683,Manufacturing,0,0,0,0
+2025,173,Broadcom,United States,34.75798467,Technology Products and Services,0,0,0,0
+2025,174,Progressive,United States,34.69862355,Insurance,0,0,0,0
+2025,175,McDonald's,,34.66697627,Hospitality/Travel,0,0,0,0
+2025,176,KB Financial Group,South Korea,34.60705568,Financial Services,0,0,0,0
+2025,177,CITIC,China,34.21758609,Diversified,0,0,0,0
+2025,178,Lowe's,United States,34.10731872,Consumer Goods and Retail,0,0,0,0
+2025,179,Daimler Truck Holding,Germany,34.08349834,Automotive,0,0,0,0
+2025,180,Centene,United States,33.78152332,Insurance,0,0,0,0
+2025,181,American Express,United States,33.71252558,Financial Services,0,0,0,0
+2025,182,Safran,France,33.64401024,Manufacturing,0,0,0,0
+2025,183,HDFC Bank,India,33.6336857,Financial Services,0,0,0,0
+2025,184,Target,United States,33.61018217,Consumer Goods and Retail,0,0,0,0
+2025,185,Saint-Gobain,France,33.59760261,Manufacturing,0,0,0,0
+2025,186,Amgen,United States,33.56249289,Pharmaceuticals,0,0,0,0
+2025,187,E.ON,Germany,33.49265594,Energy and Utilities,0,0,0,0
+2025,188,Unilever,United Kingdom,33.48326765,Consumer Goods and Retail,0,0,0,0
+2025,189,Zijin Mining Group,China,33.44534059,Mining,0,0,0,0
+2025,190,ANZ Group Holdings,Australia,33.40246105,Financial Services,0,0,0,0
+2025,191,China Life Insurance,China,33.38043613,Insurance,0,0,0,0
+2025,192,Paccar,United States,33.28475499,Automotive,0,0,0,0
+2025,193,Erste Group Bank,Austria,33.17316602,Financial Services,0,0,0,0
+2025,194,HCA Healthcare,United States,33.00054892,Healthcare,0,0,0,0
+2025,195,American International Group,United States,32.89582489,Financial Services,0,0,0,0
+2025,196,Emirates NBD,United Arab Emirates,32.81300876,Financial Services,0,0,0,0
+2025,197,Agricultural Bank of China,China,32.72740098,Financial Services,0,0,0,0
+2025,198,Prudential Financial,United States,32.48431895,Insurance,0,0,0,0
+2025,199,Charles Schwab,United States,32.36084691,Financial Services,0,0,0,0
+2025,200,The Home Depot,United States,32.13396102,Consumer Goods and Retail,0,0,0,0
+2025,201,Japan Post Holdings,Japan,32.04635513,Transportation and Logistics,0,0,0,0
+2025,202,Nordea Bank,Finland,31.99206065,Financial Services,0,0,0,0
+2025,203,Banco Bradesco,Brazil,31.93839416,Financial Services,0,0,0,0
+2025,204,Deutsche Post,Germany,31.93253968,Transportation and Logistics,0,0,0,0
+2025,205,Tata Motors,India,31.87015855,Automotive,0,0,0,0
+2025,206,Applied Materials,United States,31.7913358,Manufacturing,0,0,0,0
+2025,207,Shell Plc,United Kingdom,31.52709945,Energy and Utilities,0,0,0,0
+2025,208,Qatar National Bank,Qatar,31.42602626,Financial Services,0,0,0,0
+2025,209,PG&E,United States,31.33322527,Energy and Utilities,0,0,0,0
+2025,210,L'Oréal,France,31.26413047,Consumer Goods and Retail,0,0,0,0
+2025,211,China State Construction Engineering,China,31.23735574,Construction,0,0,0,0
+2025,212,Itaú Unibanco Holding,Brazil,31.1117714,Financial Services,0,0,0,0
+2025,213,Archer Daniels Midland,United States,30.939474,Diversified,0,0,0,0
+2025,214,PDD Holdings,Ireland,30.81604763,Financial Services,0,0,0,0
+2025,215,Indian Oil,India,30.77578562,Energy and Utilities,0,0,0,0
+2025,216,Nike,United States,30.69449091,Consumer Goods and Retail,0,0,0,0
+2025,217,China Resources Land,China,30.33165904,Construction,0,0,0,0
+2025,218,China Pacific Insurance,China,30.30234099,Insurance,0,0,0,0
+2025,219,ExxonMobil,United States,30.21206904,Energy and Utilities,0,0,0,0
+2025,220,United Parcel Service,United States,29.9237126,Transportation and Logistics,0,0,0,0
+2025,221,KBC Group,Belgium,29.74780432,Financial Services,0,0,0,0
+2025,222,Holcim,Switzerland,29.63498793,Construction,0,0,0,0
+2025,223,Mondelez International,United States,29.62077278,Consumer Goods and Retail,0,0,0,0
+2025,224,Sumitomo Mitsui Financial,Japan,29.58101316,Financial Services,0,0,0,0
+2025,225,PepsiCo,United States,29.23052107,Consumer Goods and Retail,0,0,0,0
+2025,226,US Bancorp,United States,29.19145222,Financial Services,0,0,0,0
+2025,227,Bank of Nova Scotia,Canada,29.12964484,Financial Services,0,0,0,0
+2025,228,Air Liquide,France,29.10365793,Energy and Utilities,0,0,0,0
+2025,229,Glencore International,Switzerland,29.05945679,Mining,0,0,0,0
+2025,230,Abbott Laboratories,United States,29.0435204,Healthcare,0,0,0,0
+2025,231,Iberdrola,Spain,29.02027091,Energy and Utilities,0,0,0,0
+2025,232,CNOOC,Hong Kong,28.65504416,Energy and Utilities,0,0,0,0
+2025,233,Generali Group,Italy,28.61307805,Insurance,0,0,0,0
+2025,234,AIRBUS,France,28.46689029,Manufacturing,0,0,0,0
+2025,235,Nestlé,Switzerland,28.424516,Consumer Goods and Retail,0,0,0,0
+2025,236,Bank Of Jiangsu,China,28.36816346,Financial Services,0,0,0,0
+2025,237,Danaher,United States,28.33720411,Diversified,0,0,0,0
+2025,238,Marsh McLennan,United States,28.26311974,Professional Services,0,0,0,0
+2025,239,Linde,United Kingdom,28.25736802,Energy and Utilities,0,0,0,0
+2025,240,Duke Energy,United States,28.16434438,Energy and Utilities,0,0,0,0
+2025,241,China Unicom,Hong Kong,27.98300695,Telecommunications,0,0,0,0
+2025,242,Oil & Natural Gas,India,27.98198791,Energy and Utilities,0,0,0,0
+2025,243,Coca-Cola,United States,27.87272816,Consumer Goods and Retail,0,0,0,0
+2025,244,China Shenhua Energy,China,27.70434136,Mining,0,0,0,0
+2025,245,State Bank of India,India,27.62231306,Financial Services,0,0,0,0
+2025,246,Vale,Brazil,27.56817272,Mining,0,0,0,0
+2025,247,Elevance Health,United States,27.52795068,Healthcare,0,0,0,0
+2025,248,AbbVie,United States,27.3123941,Pharmaceuticals,0,0,0,0
+2025,249,China Everbright Bank,China,26.99986048,Financial Services,0,0,0,0
+2025,250,China Railway Group,China,26.94259167,Construction,0,0,0,0
+2025,251,Postal Savings Bank Of China (PSBC),China,26.67272064,Financial Services,0,0,0,0
+2025,252,PICC,China,26.52695249,Insurance,0,0,0,0
+2025,253,Anheuser-Busch InBev,Belgium,26.3336806,Consumer Goods and Retail,0,0,0,0
+2025,254,CRH,Ireland,26.31776704,Construction,0,0,0,0
+2025,255,Philip Morris International,United States,26.14170748,Consumer Goods and Retail,0,0,0,0
+2025,256,Enbridge,Canada,26.0509046,Energy and Utilities,0,0,0,0
+2025,257,Enel,Italy,25.6821526,Energy and Utilities,0,0,0,0
+2025,258,Kraft Heinz Company,United States,25.6713114,Consumer Goods and Retail,0,0,0,0
+2025,259,DNB Bank,Norway,25.62170964,Financial Services,0,0,0,0
+2025,260,ConocoPhillips,United States,25.15904341,Energy and Utilities,0,0,0,0
+2025,261,ICICI Bank,India,25.06958213,Financial Services,0,0,0,0
+2025,262,TotalEnergies,France,25.03876264,Energy and Utilities,0,0,0,0
+2025,263,BP,United Kingdom,24.6679954,Energy and Utilities,0,0,0,0
+2025,264,PNC Financial Services,United States,24.61887318,Financial Services,0,0,0,0
+2025,265,Union Pacific,United States,24.1098507,Transportation and Logistics,0,0,0,0
+2025,266,Suncor Energy,Canada,23.89084595,Energy and Utilities,0,0,0,0
+2025,267,Eni,Italy,23.68887941,Energy and Utilities,0,0,0,0
+2025,268,Phillips 66,United States,23.36293844,Energy and Utilities,0,0,0,0
+2025,269,Orange,France,23.11485542,Telecommunications,0,0,0,0
+2025,270,Danske Bank,Denmark,22.98019678,Financial Services,0,0,0,0
+2025,271,Delta Air Lines,United States,22.18087398,Transportation and Logistics,0,0,0,0
+2025,272,Al Rajhi Bank,Saudi Arabia,21.18871602,Financial Services,0,0,0,0
+2025,273,Aflac,United States,20.97573416,Insurance,0,0,0,0
+2025,274,Ameriprise Financial,United States,19.75906521,Financial Services,0,0,0,0
+2025,275,Credit Agricole,France,19.66673235,Financial Services,0,0,0,0
+2025,276,Inditex,Spain,19.54281501,Consumer Goods and Retail,0,0,0,0
+2025,277,PetroChina,China,19.48066794,Energy and Utilities,0,0,0,0
+2025,278,Southern Company,United States,19.00159149,Energy and Utilities,0,0,0,0
+2025,279,Chubb,Switzerland,18.90730047,Insurance,0,0,0,0
+2025,280,Marathon Petroleum,United States,18.55489304,Energy and Utilities,0,0,0,0
+2025,281,The Saudi National Bank,Saudi Arabia,17.41638748,Financial Services,0,0,0,0
+2025,282,Costco Wholesale,United States,17.0057864,Consumer Goods and Retail,0,0,0,0
+2025,283,Occidental Petroleum,United States,16.49654698,Energy and Utilities,0,0,0,0
+2025,284,Canadian Natural Resources,Canada,16.12915084,Energy and Utilities,0,0,0,0
+2025,285,Life Insurance Corp. of India,India,16.04464488,Insurance,0,0,0,0
+2025,286,Sinopec,China,15.59109862,Energy and Utilities,0,0,0,0
+2025,287,Kweichow Moutai,China,15.39861741,Consumer Goods and Retail,0,0,0,0
+2025,288,China Citic Bank,China,15.18061743,Financial Services,0,0,0,0
+2025,289,LVMH Moët Hennessy Louis Vuitton,France,15.1596201,Consumer Goods and Retail,0,0,0,0
+2025,290,TJX Cos,United States,15.090551,Consumer Goods and Retail,0,0,0,0
+2025,291,General Dynamics,United States,14.75970037,Manufacturing,0,0,0,0
+2025,292,Brookfield Corporation,Canada,14.22062625,Financial Services,0,0,0,0
+2025,293,EOG Resources,United States,13.3314511,Energy and Utilities,0,0,0,0
+2025,294,Berkshire Hathaway,United States,13.05561712,Financial Services,0,0,0,0
+2025,295,Fairfax Financial,Canada,10.141002,Insurance,0,0,0,0
+2025,296,Valero Energy,United States,9.285095451,Energy and Utilities,0,0,0,0
+2025,297,China Minsheng Bank,China,7.539028968,Financial Services,0,0,0,0
+2025,298,América Móvil,Mexico,5.66947902,Telecommunications,0,0,0,0
+2025,299,Fubon Financial,Taiwan,4.883791919,Financial Services,0,0,0,0
+2025,300,Caterpillar,United States,1.0,Manufacturing,0,0,0,0

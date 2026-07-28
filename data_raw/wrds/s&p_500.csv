@@ -1,0 +1,504 @@
+indexname,gvkey,tic,companyname
+S&P 500,007435,MMM,3M Company
+S&P 500,009771,AOS,A. O. Smith Corporation
+S&P 500,001598,AME,"AMETEK, Inc."
+S&P 500,001678,APA,APA Corporation
+S&P 500,009899,T,AT&T Inc.
+S&P 500,016101,ABBV,AbbVie Inc.
+S&P 500,001078,ABT,Abbott Laboratories
+S&P 500,143357,ACN,Accenture plc
+S&P 500,012540,ADBE,Adobe Inc.
+S&P 500,001161,AMD,"Advanced Micro Devices, Inc."
+S&P 500,001449,AFL,Aflac Incorporated
+S&P 500,126554,A,"Agilent Technologies, Inc."
+S&P 500,001209,APD,"Air Products and Chemicals, Inc."
+S&P 500,037460,ABNB,"Airbnb, Inc."
+S&P 500,125595,AKAM,"Akamai Technologies, Inc."
+S&P 500,029751,ALB,Albemarle Corporation
+S&P 500,064821,ARE,"Alexandria Real Estate Equities, Inc."
+S&P 500,141384,ALGN,"Align Technology, Inc."
+S&P 500,316056,ALLE,Allegion plc
+S&P 500,011554,LNT,Alliant Energy Corporation
+S&P 500,160329,GOOGL,Alphabet Inc.
+S&P 500,160329,GOOG,Alphabet Inc.
+S&P 500,008543,MO,"Altria Group, Inc."
+S&P 500,064768,AMZN,"Amazon.com, Inc."
+S&P 500,100243,AMCR,Amcor plc
+S&P 500,010860,AEE,Ameren Corporation
+S&P 500,001440,AEP,"American Electric Power Company, Inc."
+S&P 500,001447,AXP,American Express Company
+S&P 500,001487,AIG,"American International Group, Inc."
+S&P 500,105365,AMT,American Tower Corporation
+S&P 500,179437,AWK,"American Water Works Company, Inc."
+S&P 500,164708,AMP,"Ameriprise Financial, Inc."
+S&P 500,001602,AMGN,Amgen Inc.
+S&P 500,014282,APH,Amphenol Corporation
+S&P 500,001632,ADI,"Analog Devices, Inc."
+S&P 500,003221,AON,Aon plc
+S&P 500,184254,APO,"Apollo Global Management, Inc."
+S&P 500,038212,APP,AppLovin Corporation
+S&P 500,001690,AAPL,Apple Inc.
+S&P 500,001704,AMAT,"Applied Materials, Inc."
+S&P 500,118122,APTV,Aptiv PLC
+S&P 500,061302,ACGL,Arch Capital Group Ltd.
+S&P 500,001722,ADM,Archer-Daniels-Midland Company
+S&P 500,020412,ARES,Ares Management Corporation
+S&P 500,020748,ANET,"Arista Networks, Inc."
+S&P 500,004973,AJG,Arthur J. Gallagher & Co.
+S&P 500,157057,AIZ,"Assurant, Inc."
+S&P 500,004383,ATO,Atmos Energy Corporation
+S&P 500,023809,AZO,"AutoZone, Inc."
+S&P 500,001878,ADSK,"Autodesk, Inc."
+S&P 500,001891,ADP,"Automatic Data Processing, Inc."
+S&P 500,029875,AVB,"AvalonBay Communities, Inc."
+S&P 500,001913,AVY,Avery Dennison Corporation
+S&P 500,143912,AXON,"Axon Enterprise, Inc."
+S&P 500,064925,BXP,"BXP, Inc."
+S&P 500,032106,BKR,Baker Hughes Company
+S&P 500,001988,BALL,Ball Corporation
+S&P 500,007647,BAC,Bank of America Corporation
+S&P 500,002086,BAX,Baxter International Inc.
+S&P 500,002111,BDX,"Becton, Dickinson and Company"
+S&P 500,002176,BRK.B,Berkshire Hathaway Inc.
+S&P 500,002184,BBY,"Best Buy Co., Inc."
+S&P 500,015414,TECH,Bio-Techne Corporation
+S&P 500,024468,BIIB,Biogen Inc.
+S&P 500,124434,BLK,"BlackRock, Inc."
+S&P 500,177088,BX,Blackstone Inc.
+S&P 500,026367,XYZ,"Block, Inc."
+S&P 500,119314,BKNG,Booking Holdings Inc.
+S&P 500,025279,BSX,Boston Scientific Corporation
+S&P 500,002403,BMY,Bristol-Myers Squibb Company
+S&P 500,180711,AVGO,Broadcom Inc.
+S&P 500,176928,BR,"Broadridge Financial Solutions, Inc."
+S&P 500,015417,BRO,"Brown & Brown, Inc."
+S&P 500,002435,BF.B,Brown-Forman Corporation
+S&P 500,163036,BLDR,"Builders FirstSource, Inc."
+S&P 500,144435,BG,Bunge Global SA
+S&P 500,065609,CHRW,"C.H. Robinson Worldwide, Inc."
+S&P 500,260774,CBRE,"CBRE Group, Inc."
+S&P 500,028320,CDW,CDW Corporation
+S&P 500,163946,CF,"CF Industries Holdings, Inc."
+S&P 500,149070,CME,CME Group Inc.
+S&P 500,003439,CMS,CMS Energy Corporation
+S&P 500,015444,CRH,CRH plc
+S&P 500,002574,CSX,CSX Corporation
+S&P 500,007241,CVS,CVS Health Corporation
+S&P 500,013421,CDNS,"Cadence Design Systems, Inc."
+S&P 500,028629,CPT,Camden Property Trust
+S&P 500,030990,COF,Capital One Financial Corporation
+S&P 500,002751,CAH,"Cardinal Health, Inc."
+S&P 500,013498,CCL,Carnival Corporation Ltd.
+S&P 500,036191,CARR,Carrier Global Corporation
+S&P 500,030999,CVNA,Carvana Co.
+S&P 500,002807,CASY,"Casey's General Stores, Inc."
+S&P 500,002817,CAT,Caterpillar Inc.
+S&P 500,184500,CBOE,"Cboe Global Markets, Inc."
+S&P 500,031673,COR,"Cencora, Inc."
+S&P 500,145552,CNC,Centene Corporation
+S&P 500,005742,CNP,"CenterPoint Energy, Inc."
+S&P 500,137131,CRL,"Charles River Laboratories International, Inc."
+S&P 500,126136,CHTR,"Charter Communications, Inc."
+S&P 500,002991,CVX,Chevron Corporation
+S&P 500,165914,CMG,"Chipotle Mexican Grill, Inc."
+S&P 500,028034,CB,Chubb Limited
+S&P 500,003026,CHD,"Church & Dwight Co., Inc."
+S&P 500,064356,CIEN,Ciena Corporation
+S&P 500,014824,CINF,Cincinnati Financial Corporation
+S&P 500,003062,CTAS,Cintas Corporation
+S&P 500,020779,CSCO,"Cisco Systems, Inc."
+S&P 500,003243,C,Citigroup Inc.
+S&P 500,021825,CFG,"Citizens Financial Group, Inc."
+S&P 500,112111,CSGP,"CoStar Group, Inc."
+S&P 500,111864,CTSH,Cognizant Technology Solutions Corporation
+S&P 500,014561,COHR,Coherent Corp.
+S&P 500,034749,COIN,"Coinbase Global, Inc."
+S&P 500,003170,CL,Colgate-Palmolive Company
+S&P 500,003226,CMCSA,Comcast Corporation
+S&P 500,064997,FIX,"Comfort Systems USA, Inc."
+S&P 500,003362,CAG,"Conagra Brands, Inc."
+S&P 500,008549,COP,ConocoPhillips
+S&P 500,003413,ED,"Consolidated Edison, Inc."
+S&P 500,002710,STZ,"Constellation Brands, Inc."
+S&P 500,040614,CEG,Constellation Energy Corporation
+S&P 500,029901,CPRT,"Copart, Inc."
+S&P 500,003532,GLW,Corning Incorporated
+S&P 500,184700,CPAY,"Corpay, Inc."
+S&P 500,035168,CTVA,"Corteva, Inc."
+S&P 500,029028,COST,Costco Wholesale Corporation
+S&P 500,035182,CRWD,"CrowdStrike Holdings, Inc."
+S&P 500,113490,CCI,Crown Castle Inc.
+S&P 500,003650,CMI,Cummins Inc.
+S&P 500,025340,DHI,"D.R. Horton, Inc."
+S&P 500,003897,DTE,DTE Energy Company
+S&P 500,061483,DVA,DaVita Inc.
+S&P 500,003735,DHR,Danaher Corporation
+S&P 500,031846,DRI,"Darden Restaurants, Inc."
+S&P 500,035620,DDOG,"Datadog, Inc."
+S&P 500,029015,DECK,Deckers Outdoor Corporation
+S&P 500,003835,DE,Deere & Company
+S&P 500,014489,DELL,Dell Technologies Inc.
+S&P 500,003851,DAL,"Delta Air Lines, Inc."
+S&P 500,014934,DVN,Devon Energy Corporation
+S&P 500,162887,DXCM,"DexCom, Inc."
+S&P 500,170750,FANG,"Diamondback Energy, Inc."
+S&P 500,160991,DLR,"Digital Realty Trust, Inc."
+S&P 500,004016,DG,Dollar General Corporation
+S&P 500,031587,DLTR,"Dollar Tree, Inc."
+S&P 500,004029,D,"Dominion Energy, Inc."
+S&P 500,160211,DPZ,"Domino's Pizza, Inc."
+S&P 500,037420,DASH,"DoorDash, Inc."
+S&P 500,004058,DOV,Dover Corporation
+S&P 500,034443,DOW,Dow Inc.
+S&P 500,004060,DD,"DuPont de Nemours, Inc."
+S&P 500,004093,DUK,Duke Energy Corporation
+S&P 500,006223,EME,"EMCOR Group, Inc."
+S&P 500,016478,EOG,"EOG Resources, Inc."
+S&P 500,004430,EQT,EQT Corporation
+S&P 500,004199,ETN,Eaton Corporation plc
+S&P 500,179202,ECHO,EchoStar Corporation
+S&P 500,004213,ECL,Ecolab Inc.
+S&P 500,009846,EIX,Edison International
+S&P 500,133366,EW,Edwards Lifesciences Corporation
+S&P 500,016721,EA,Electronic Arts Inc.
+S&P 500,145046,ELV,"Elevance Health, Inc."
+S&P 500,006730,LLY,Eli Lilly and Company
+S&P 500,004321,EMR,Emerson Electric Co.
+S&P 500,007366,ETR,Entergy Corporation
+S&P 500,004423,EFX,Equifax Inc.
+S&P 500,138743,EQIX,"Equinix, Inc."
+S&P 500,028733,EQR,Equity Residential
+S&P 500,061380,ERIE,Erie Indemnity Company
+S&P 500,030293,ESS,"Essex Property Trust, Inc."
+S&P 500,061388,EG,"Everest Group, Ltd."
+S&P 500,006338,EVRG,"Evergy, Inc."
+S&P 500,007970,ES,Eversource Energy
+S&P 500,008539,EXC,Exelon Corporation
+S&P 500,027786,EXE,Expand Energy Corporation
+S&P 500,126296,EXPE,"Expedia Group, Inc."
+S&P 500,004494,EXPD,"Expeditors International of Washington, Inc."
+S&P 500,160479,EXR,Extra Space Storage Inc.
+S&P 500,004503,XOM,Exxon Mobil Corporation
+S&P 500,121077,FFIV,"F5, Inc."
+S&P 500,063172,FDS,FactSet Research Systems Inc.
+S&P 500,013824,FICO,Fair Isaac Corporation
+S&P 500,014225,FAST,Fastenal Company
+S&P 500,004598,FDX,FedEx Corporation
+S&P 500,076183,FDXF,"FedEx Freight Holding Company, Inc."
+S&P 500,004605,FRT,Federal Realty Investment Trust
+S&P 500,165993,FIS,"Fidelity National Information Services, Inc."
+S&P 500,004640,FITB,Fifth Third Bancorp
+S&P 500,175404,FSLR,"First Solar, Inc."
+S&P 500,008099,FE,FirstEnergy Corp.
+S&P 500,012635,FISV,"Fiserv, Inc."
+S&P 500,030170,FLEX,Flex Ltd.
+S&P 500,004839,F,Ford Motor Company
+S&P 500,183377,FTNT,"Fortinet, Inc."
+S&P 500,026590,FTV,Fortive Corporation
+S&P 500,034636,FOXA,Fox Corporation
+S&P 500,034636,FOX,Fox Corporation
+S&P 500,004885,BEN,"Franklin Resources, Inc."
+S&P 500,014590,FCX,Freeport-McMoRan Inc.
+S&P 500,041818,GEHC,GE HealthCare Technologies Inc.
+S&P 500,045169,GEV,GE Vernova Inc.
+S&P 500,141459,GRMN,Garmin Ltd.
+S&P 500,012441,IT,"Gartner, Inc."
+S&P 500,015855,GEN,Gen Digital Inc.
+S&P 500,183736,GNRC,Generac Holdings Inc.
+S&P 500,005046,GD,General Dynamics Corporation
+S&P 500,005047,GE,General Electric Company
+S&P 500,005071,GIS,"General Mills, Inc."
+S&P 500,005073,GM,General Motors Company
+S&P 500,005125,GPC,Genuine Parts Company
+S&P 500,024856,GILD,"Gilead Sciences, Inc."
+S&P 500,141913,GPN,Global Payments Inc.
+S&P 500,010614,GL,Globe Life Inc.
+S&P 500,023071,GDDY,GoDaddy Inc.
+S&P 500,022260,HCA,"HCA Healthcare, Inc."
+S&P 500,005606,HPQ,HP Inc.
+S&P 500,005439,HAL,Halliburton Company
+S&P 500,005518,HAS,"Hasbro, Inc."
+S&P 500,013125,DOC,"Healthpeak Properties, Inc."
+S&P 500,061494,HSIC,"Henry Schein, Inc."
+S&P 500,026156,HPE,Hewlett Packard Enterprise Company
+S&P 500,005643,HLT,Hilton Worldwide Holdings Inc.
+S&P 500,075626,HONA,Honeywell Aerospace Inc.
+S&P 500,005709,HRL,Hormel Foods Corporation
+S&P 500,007063,HST,"Host Hotels & Resorts, Inc."
+S&P 500,028192,HWM,Howmet Aerospace Inc.
+S&P 500,005764,HUBB,Hubbell Incorporated
+S&P 500,027914,HUM,Humana Inc.
+S&P 500,005786,HBAN,Huntington Bancshares Incorporated
+S&P 500,186310,HII,"Huntington Ingalls Industries, Inc."
+S&P 500,015267,IEX,IDEX Corporation
+S&P 500,024197,IDXX,"IDEXX Laboratories, Inc."
+S&P 500,017928,IQV,IQVIA Holdings Inc.
+S&P 500,005878,ITW,Illinois Tool Works Inc.
+S&P 500,029127,INCY,Incyte Corporation
+S&P 500,030098,IR,Ingersoll Rand Inc.
+S&P 500,177227,PODD,Insulet Corporation
+S&P 500,006008,INTC,Intel Corporation
+S&P 500,176701,IBKR,"Interactive Brokers Group, Inc."
+S&P 500,163610,ICE,"Intercontinental Exchange, Inc."
+S&P 500,006066,IBM,International Business Machines Corporation
+S&P 500,006078,IFF,International Flavors & Fragrances Inc.
+S&P 500,006104,IP,International Paper Company
+S&P 500,027928,INTU,Intuit Inc.
+S&P 500,136725,ISRG,"Intuitive Surgical, Inc."
+S&P 500,029804,IVZ,Invesco Ltd.
+S&P 500,030004,INVH,Invitation Homes Inc.
+S&P 500,062374,IRM,Iron Mountain Incorporated
+S&P 500,005783,JBHT,"J.B. Hunt Transport Services, Inc."
+S&P 500,002968,JPM,JPMorgan Chase & Co.
+S&P 500,028195,JBL,Jabil Inc.
+S&P 500,011811,JKHY,"Jack Henry & Associates, Inc."
+S&P 500,006216,J,Jacobs Solutions Inc.
+S&P 500,006266,JNJ,Johnson & Johnson
+S&P 500,006268,JCI,Johnson Controls International plc
+S&P 500,179741,KKR,KKR & Co. Inc.
+S&P 500,006304,KLAC,KLA Corporation
+S&P 500,041897,KVUE,Kenvue Inc.
+S&P 500,028877,KDP,Keurig Dr Pepper Inc.
+S&P 500,009783,KEY,KeyCorp
+S&P 500,020232,KEYS,"Keysight Technologies, Inc."
+S&P 500,006435,KMB,Kimberly-Clark Corporation
+S&P 500,024731,KIM,Kimco Realty Corporation
+S&P 500,006310,KMI,"Kinder Morgan, Inc."
+S&P 500,005492,LHX,"L3Harris Technologies, Inc."
+S&P 500,014960,LH,Labcorp Holdings Inc.
+S&P 500,006565,LRCX,Lam Research Corporation
+S&P 500,161844,LVS,Las Vegas Sands Corp.
+S&P 500,165123,LDOS,"Leidos Holdings, Inc."
+S&P 500,006669,LEN,Lennar Corporation
+S&P 500,122380,LII,Lennox International Inc.
+S&P 500,025124,LIN,Linde plc
+S&P 500,165746,LYV,"Live Nation Entertainment, Inc."
+S&P 500,006774,LMT,Lockheed Martin Corporation
+S&P 500,006781,L,Loews Corporation
+S&P 500,006829,LOW,"Lowe's Companies, Inc."
+S&P 500,023249,LITE,Lumentum Holdings Inc.
+S&P 500,294524,LYB,LyondellBasell Industries N.V.
+S&P 500,004699,MTB,M&T Bank Corporation
+S&P 500,014418,MGM,MGM Resorts International
+S&P 500,178507,MSCI,MSCI Inc.
+S&P 500,186989,MPC,Marathon Petroleum Corporation
+S&P 500,028930,MAR,"Marriott International, Inc."
+S&P 500,007065,MRSH,"Marsh & McLennan Companies, Inc."
+S&P 500,029733,MLM,"Martin Marietta Materials, Inc."
+S&P 500,137310,MRVL,"Marvell Technology, Inc."
+S&P 500,007085,MAS,Masco Corporation
+S&P 500,160225,MA,Mastercard Incorporated
+S&P 500,007146,MKC,"McCormick & Company, Incorporated"
+S&P 500,007154,MCD,McDonald's Corporation
+S&P 500,007171,MCK,McKesson Corporation
+S&P 500,007228,MDT,Medtronic plc
+S&P 500,007257,MRK,"Merck & Co., Inc."
+S&P 500,133768,MET,"MetLife, Inc."
+S&P 500,170617,META,"Meta Platforms, Inc."
+S&P 500,065772,MTD,Mettler-Toledo International Inc.
+S&P 500,027965,MCHP,Microchip Technology Incorporated
+S&P 500,007343,MU,"Micron Technology, Inc."
+S&P 500,012141,MSFT,Microsoft Corporation
+S&P 500,029649,MAA,"Mid-America Apartment Communities, Inc."
+S&P 500,034410,MRNA,"Moderna, Inc."
+S&P 500,003505,TAP,Molson Coors Beverage Company
+S&P 500,142953,MDLZ,"Mondelez International, Inc."
+S&P 500,160888,MPWR,"Monolithic Power Systems, Inc."
+S&P 500,024316,MNST,Monster Beverage Corporation
+S&P 500,139665,MCO,Moody's Corporation
+S&P 500,012124,MS,Morgan Stanley
+S&P 500,007585,MSI,"Motorola Solutions, Inc."
+S&P 500,007906,NKE,"NIKE, Inc."
+S&P 500,135990,NRG,"NRG Energy, Inc."
+S&P 500,117768,NVDA,NVIDIA Corporation
+S&P 500,012459,NVR,"NVR, Inc."
+S&P 500,184725,NXPI,NXP Semiconductors N.V.
+S&P 500,149337,NDAQ,"Nasdaq, Inc."
+S&P 500,061591,NTAP,"NetApp, Inc."
+S&P 500,147579,NFLX,"Netflix, Inc."
+S&P 500,007881,NEM,Newmont Corporation
+S&P 500,018043,NWSA,News Corporation
+S&P 500,018043,NWS,News Corporation
+S&P 500,004517,NEE,"NextEra Energy, Inc."
+S&P 500,007974,NI,NiSource Inc.
+S&P 500,007921,NDSN,Nordson Corporation
+S&P 500,007923,NSC,Norfolk Southern Corporation
+S&P 500,007982,NTRS,Northern Trust Corporation
+S&P 500,007985,NOC,Northrop Grumman Corporation
+S&P 500,104432,NCLH,Norwegian Cruise Line Holdings Ltd.
+S&P 500,008030,NUE,Nucor Corporation
+S&P 500,028180,ORLY,"O'Reilly Automotive, Inc."
+S&P 500,134932,ON,ON Semiconductor Corporation
+S&P 500,008151,OKE,"ONEOK, Inc."
+S&P 500,008068,OXY,Occidental Petroleum Corporation
+S&P 500,024617,ODFL,"Old Dominion Freight Line, Inc."
+S&P 500,004066,OMC,Omnicom Group Inc.
+S&P 500,012142,ORCL,Oracle Corporation
+S&P 500,036190,OTIS,Otis Worldwide Corporation
+S&P 500,008253,PCAR,PACCAR Inc
+S&P 500,008264,PCG,PG&E Corporation
+S&P 500,008247,PPG,"PPG Industries, Inc."
+S&P 500,008455,PPL,PPL Corporation
+S&P 500,018699,PTC,PTC Inc.
+S&P 500,128978,PKG,Packaging Corporation of America
+S&P 500,036910,PLTR,Palantir Technologies Inc.
+S&P 500,171067,PANW,"Palo Alto Networks, Inc."
+S&P 500,013714,PSKY,Paramount Skydance Corporation
+S&P 500,008358,PH,Parker-Hannifin Corporation
+S&P 500,024616,PYPL,"PayPal Holdings, Inc."
+S&P 500,008402,PAYX,"Paychex, Inc."
+S&P 500,008463,PNR,Pentair plc
+S&P 500,008479,PEP,"PepsiCo, Inc."
+S&P 500,008530,PFE,Pfizer Inc.
+S&P 500,179621,PM,Philip Morris International Inc.
+S&P 500,170841,PSX,Phillips 66
+S&P 500,001075,PNW,Pinnacle West Capital Corporation
+S&P 500,145701,PFG,"Principal Financial Group, Inc."
+S&P 500,029984,PLD,"Prologis, Inc."
+S&P 500,143356,PRU,"Prudential Financial, Inc."
+S&P 500,008810,PEG,Public Service Enterprise Group Incorporated
+S&P 500,010096,PSA,Public Storage
+S&P 500,008823,PHM,"PulteGroup, Inc."
+S&P 500,024800,QCOM,QUALCOMM Incorporated
+S&P 500,074813,Q,"Qnity Electronics, Inc."
+S&P 500,066446,PWR,"Quanta Services, Inc."
+S&P 500,064166,DGX,Quest Diagnostics Incorporated
+S&P 500,010983,RTX,RTX Corporation
+S&P 500,064891,RL,Ralph Lauren Corporation
+S&P 500,008898,RJF,"Raymond James Financial, Inc."
+S&P 500,030822,O,Realty Income Corporation
+S&P 500,029099,REG,Regency Centers Corporation
+S&P 500,023812,REGN,"Regeneron Pharmaceuticals, Inc."
+S&P 500,004674,RF,Regions Financial Corporation
+S&P 500,112168,RSG,"Republic Services, Inc."
+S&P 500,031887,RMD,ResMed Inc.
+S&P 500,004145,RVTY,"Revvity, Inc."
+S&P 500,039293,HOOD,"Robinhood Markets, Inc."
+S&P 500,009203,ROK,"Rockwell Automation, Inc."
+S&P 500,009225,ROL,"Rollins, Inc."
+S&P 500,024925,ROP,"Roper Technologies, Inc."
+S&P 500,009248,ROST,"Ross Stores, Inc."
+S&P 500,028191,RCL,Royal Caribbean Cruises Ltd.
+S&P 500,007163,SPGI,S&P Global Inc.
+S&P 500,121382,SBAC,SBA Communications Corporation
+S&P 500,009465,SLB,SLB N.V.
+S&P 500,025313,STE,STERIS plc
+S&P 500,157855,CRM,"Salesforce, Inc."
+S&P 500,051008,SNDK,Sandisk Corporation
+S&P 500,150937,STX,Seagate Technology Holdings plc
+S&P 500,008272,SRE,Sempra
+S&P 500,171007,NOW,"ServiceNow, Inc."
+S&P 500,029389,SPG,"Simon Property Group, Inc."
+S&P 500,001327,SWKS,"Skyworks Solutions, Inc."
+S&P 500,283184,SW,Smurfit Westrock Plc
+S&P 500,009778,SNA,Snap-on Incorporated
+S&P 500,045167,SOLV,Solventum Corporation
+S&P 500,009882,LUV,Southwest Airlines Co.
+S&P 500,010016,SWK,"Stanley Black & Decker, Inc."
+S&P 500,025434,SBUX,Starbucks Corporation
+S&P 500,010035,STT,State Street Corporation
+S&P 500,064030,STLD,"Steel Dynamics, Inc."
+S&P 500,010115,SYK,Stryker Corporation
+S&P 500,176567,SMCI,"Super Micro Computer, Inc."
+S&P 500,020686,SYF,Synchrony Financial
+S&P 500,024975,SNPS,"Synopsys, Inc."
+S&P 500,010247,SYY,Sysco Corporation
+S&P 500,017874,TMUS,"T-Mobile US, Inc."
+S&P 500,012138,TROW,"T. Rowe Price Group, Inc."
+S&P 500,177267,TEL,TE Connectivity plc
+S&P 500,125240,TKO,"TKO Group Holdings, Inc."
+S&P 500,064630,TTWO,"Take-Two Interactive Software, Inc."
+S&P 500,140541,TPR,"Tapestry, Inc."
+S&P 500,185532,TRGP,Targa Resources Corp.
+S&P 500,003813,TGT,Target Corporation
+S&P 500,126721,TDY,Teledyne Technologies Incorporated
+S&P 500,010453,TER,"Teradyne, Inc."
+S&P 500,184996,TSLA,"Tesla, Inc."
+S&P 500,010499,TXN,Texas Instruments Incorporated
+S&P 500,010504,TPL,Texas Pacific Land Corporation
+S&P 500,010519,TXT,Textron Inc.
+S&P 500,024216,AES,The AES Corporation
+S&P 500,028349,ALL,The Allstate Corporation
+S&P 500,002019,BNY,The Bank of New York Mellon Corporation
+S&P 500,002285,BA,The Boeing Company
+S&P 500,013988,SCHW,The Charles Schwab Corporation
+S&P 500,002547,CI,The Cigna Group
+S&P 500,003121,CLX,The Clorox Company
+S&P 500,003144,KO,The Coca-Cola Company
+S&P 500,003504,COO,"The Cooper Companies, Inc."
+S&P 500,061567,EL,The Estée Lauder Companies Inc.
+S&P 500,114628,GS,"The Goldman Sachs Group, Inc."
+S&P 500,061739,HIG,"The Hartford Insurance Group, Inc."
+S&P 500,005597,HSY,The Hershey Company
+S&P 500,005680,HD,"The Home Depot, Inc."
+S&P 500,009777,SJM,The J. M. Smucker Company
+S&P 500,005568,KHC,The Kraft Heinz Company
+S&P 500,006502,KR,The Kroger Co.
+S&P 500,162129,MOS,The Mosaic Company
+S&P 500,008245,PNC,"The PNC Financial Services Group, Inc."
+S&P 500,008762,PG,The Procter & Gamble Company
+S&P 500,013341,PGR,The Progressive Corporation
+S&P 500,009667,SHW,The Sherwin-Williams Company
+S&P 500,009850,SO,The Southern Company
+S&P 500,011672,TJX,"The TJX Companies, Inc."
+S&P 500,027885,TTD,"The Trade Desk, Inc."
+S&P 500,062689,TRV,"The Travelers Companies, Inc."
+S&P 500,003980,DIS,The Walt Disney Company
+S&P 500,011506,WMB,"The Williams Companies, Inc."
+S&P 500,010530,TMO,Thermo Fisher Scientific Inc.
+S&P 500,029736,TSCO,Tractor Supply Company
+S&P 500,005959,TT,Trane Technologies plc
+S&P 500,148349,TDG,TransDigm Group Incorporated
+S&P 500,022815,TRMB,Trimble Inc.
+S&P 500,011856,TFC,Truist Financial Corporation
+S&P 500,010789,TYL,"Tyler Technologies, Inc."
+S&P 500,010793,TSN,"Tyson Foods, Inc."
+S&P 500,004723,USB,U.S. Bancorp
+S&P 500,010894,UDR,"UDR, Inc."
+S&P 500,035077,UBER,"Uber Technologies, Inc."
+S&P 500,178704,ULTA,"Ulta Beauty, Inc."
+S&P 500,010867,UNP,Union Pacific Corporation
+S&P 500,010795,UAL,"United Airlines Holdings, Inc."
+S&P 500,010920,UPS,"United Parcel Service, Inc."
+S&P 500,066065,URI,"United Rentals, Inc."
+S&P 500,010903,UNH,UnitedHealth Group Incorporated
+S&P 500,011032,UHS,"Universal Health Services, Inc."
+S&P 500,032580,VICI,VICI Properties Inc.
+S&P 500,015247,VLO,Valero Energy Corporation
+S&P 500,018689,VEEV,Veeva Systems Inc.
+S&P 500,110179,VTR,"Ventas, Inc."
+S&P 500,043197,VLTO,Veralto Corporation
+S&P 500,066368,VRSN,"VeriSign, Inc."
+S&P 500,180652,VRSK,"Verisk Analytics, Inc."
+S&P 500,002136,VZ,Verizon Communications Inc.
+S&P 500,024344,VRTX,Vertex Pharmaceuticals Incorporated
+S&P 500,036175,VRT,Vertiv Holdings Co
+S&P 500,007637,VTRS,Viatris Inc.
+S&P 500,179534,V,Visa Inc.
+S&P 500,157373,VST,Vistra Corp.
+S&P 500,011228,VMC,Vulcan Materials Company
+S&P 500,014822,WRB,W. R. Berkley Corporation
+S&P 500,005256,GWW,"W.W. Grainger, Inc."
+S&P 500,011550,WEC,"WEC Energy Group, Inc."
+S&P 500,011259,WMT,Walmart Inc.
+S&P 500,164296,WBD,"Warner Bros. Discovery, Inc."
+S&P 500,014477,WM,"Waste Management, Inc."
+S&P 500,061574,WAT,Waters Corporation
+S&P 500,008007,WFC,Wells Fargo & Company
+S&P 500,005543,WELL,Welltower Inc.
+S&P 500,011376,WST,"West Pharmaceutical Services, Inc."
+S&P 500,011399,WDC,Western Digital Corporation
+S&P 500,060979,WAB,Westinghouse Air Brake Technologies Corporation
+S&P 500,011456,WY,Weyerhaeuser Company
+S&P 500,011511,WSM,"Williams-Sonoma, Inc."
+S&P 500,144009,WTW,Willis Towers Watson Public Limited Company
+S&P 500,015044,WDAY,"Workday, Inc."
+S&P 500,149318,WYNN,"Wynn Resorts, Limited"
+S&P 500,007977,XEL,Xcel Energy Inc.
+S&P 500,189491,XYL,Xylem Inc.
+S&P 500,065417,YUM,"Yum! Brands, Inc."
+S&P 500,024405,ZBRA,Zebra Technologies Corporation
+S&P 500,144559,ZBH,"Zimmer Biomet Holdings, Inc."
+S&P 500,013721,ZTS,Zoetis Inc.
+S&P 500,114524,EBAY,eBay Inc.
+S&P 500,178015,LULU,lululemon athletica inc.
